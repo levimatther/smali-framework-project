@@ -15,6 +15,16 @@
 
 
 # instance fields
+.field public allResponseHeaders:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lcom/android/volley/Header;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public data:[B
 
 .field public etag:Ljava/lang/String;
@@ -43,10 +53,17 @@
 .method public constructor <init>()V
     .locals 1
 
+<<<<<<< HEAD
     .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 105
+=======
+    .line 68
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 95
+>>>>>>> 4d1b24c5... Update volley
     invoke-static {}, Ljava/util/Collections;->emptyMap()Ljava/util/Map;
 
     move-result-object v0
@@ -59,19 +76,47 @@
 
 # virtual methods
 .method public isExpired()Z
+<<<<<<< HEAD
     .locals 4
 
     .line 114
     iget-wide v0, p0, Lcom/android/volley/Cache$Entry;->ttl:J
+=======
+    .locals 2
 
+    .line 105
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
+    move-result-wide v0
+>>>>>>> 4d1b24c5... Update volley
+
+    invoke-virtual {p0, v0, v1}, Lcom/android/volley/Cache$Entry;->isExpired(J)Z
+
+<<<<<<< HEAD
     move-result-wide v2
 
     cmp-long v0, v0, v2
 
     if-gez v0, :cond_0
 
+=======
+    move-result v0
+
+    return v0
+.end method
+
+.method isExpired(J)Z
+    .locals 2
+    .param p1, "currentTimeMillis"    # J
+
+    .line 109
+    iget-wide v0, p0, Lcom/android/volley/Cache$Entry;->ttl:J
+
+    cmp-long v0, v0, p1
+
+    if-gez v0, :cond_0
+
+>>>>>>> 4d1b24c5... Update volley
     const/4 v0, 0x1
 
     goto :goto_0
@@ -84,19 +129,47 @@
 .end method
 
 .method public refreshNeeded()Z
+<<<<<<< HEAD
     .locals 4
 
     .line 124
     iget-wide v0, p0, Lcom/android/volley/Cache$Entry;->softTtl:J
+=======
+    .locals 2
 
+    .line 114
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
+    move-result-wide v0
+>>>>>>> 4d1b24c5... Update volley
+
+    invoke-virtual {p0, v0, v1}, Lcom/android/volley/Cache$Entry;->refreshNeeded(J)Z
+
+<<<<<<< HEAD
     move-result-wide v2
 
     cmp-long v0, v0, v2
 
     if-gez v0, :cond_0
 
+=======
+    move-result v0
+
+    return v0
+.end method
+
+.method refreshNeeded(J)Z
+    .locals 2
+    .param p1, "currentTimeMillis"    # J
+
+    .line 118
+    iget-wide v0, p0, Lcom/android/volley/Cache$Entry;->softTtl:J
+
+    cmp-long v0, v0, p1
+
+    if-gez v0, :cond_0
+
+>>>>>>> 4d1b24c5... Update volley
     const/4 v0, 0x1
 
     goto :goto_0

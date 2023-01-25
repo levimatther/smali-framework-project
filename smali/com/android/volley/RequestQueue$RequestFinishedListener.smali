@@ -22,6 +22,9 @@
     }
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # virtual methods
 .method public abstract onRequestFinished(Lcom/android/volley/Request;)V

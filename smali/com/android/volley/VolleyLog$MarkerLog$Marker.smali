@@ -25,8 +25,15 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;JJ)V
     .locals 0
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "thread"    # J
+    .param p4, "time"    # J
 
+<<<<<<< HEAD
     .line 123
+=======
+    .line 119
+>>>>>>> 4d1b24c5... Update volley
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 124

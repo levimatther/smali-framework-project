@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/volley/CacheDispatcher;->run()V
+    value = Lcom/android/volley/CacheDispatcher;->processRequest(Lcom/android/volley/Request;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,8 +26,13 @@
 # direct methods
 .method constructor <init>(Lcom/android/volley/CacheDispatcher;Lcom/android/volley/Request;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/volley/CacheDispatcher;
 
+<<<<<<< HEAD
     .line 158
+=======
+    .line 191
+>>>>>>> 4d1b24c5... Update volley
     iput-object p1, p0, Lcom/android/volley/CacheDispatcher$1;->this$0:Lcom/android/volley/CacheDispatcher;
 
     iput-object p2, p0, Lcom/android/volley/CacheDispatcher$1;->val$finalRequest:Lcom/android/volley/Request;
@@ -42,7 +47,11 @@
 .method public run()V
     .locals 2
 
+<<<<<<< HEAD
     .line 162
+=======
+    .line 195
+>>>>>>> 4d1b24c5... Update volley
     :try_start_0
     iget-object v0, p0, Lcom/android/volley/CacheDispatcher$1;->this$0:Lcom/android/volley/CacheDispatcher;
 
@@ -56,6 +65,27 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
+<<<<<<< HEAD
     :catch_0
+=======
+    .line 199
+    goto :goto_0
+
+    .line 196
+    :catch_0
+    move-exception v0
+
+    .line 198
+    .local v0, "e":Ljava/lang/InterruptedException;
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Thread;->interrupt()V
+
+    .line 200
+    .end local v0    # "e":Ljava/lang/InterruptedException;
+    :goto_0
+>>>>>>> 4d1b24c5... Update volley
     return-void
 .end method
