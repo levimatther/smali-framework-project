@@ -24,8 +24,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/volley/toolbox/ImageLoader;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/volley/toolbox/ImageLoader;
 
-    .line 520
+    .line 492
     iput-object p1, p0, Lcom/android/volley/toolbox/ImageLoader$4;->this$0:Lcom/android/volley/toolbox/ImageLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +39,7 @@
 .method public run()V
     .locals 6
 
-    .line 523
+    .line 495
     iget-object v0, p0, Lcom/android/volley/toolbox/ImageLoader$4;->this$0:Lcom/android/volley/toolbox/ImageLoader;
 
     invoke-static {v0}, Lcom/android/volley/toolbox/ImageLoader;->access$200(Lcom/android/volley/toolbox/ImageLoader;)Ljava/util/HashMap;
@@ -53,7 +54,7 @@
 
     move-result-object v0
 
-    :cond_0
+    :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
@@ -66,21 +67,22 @@
 
     check-cast v1, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;
 
-    .line 524
-    invoke-static {v1}, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;->access$300(Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;)Ljava/util/LinkedList;
+    .line 496
+    .local v1, "bir":Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;
+    invoke-static {v1}, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;->access$300(Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;)Ljava/util/List;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    :goto_0
+    :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v3
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_2
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -88,31 +90,33 @@
 
     check-cast v3, Lcom/android/volley/toolbox/ImageLoader$ImageContainer;
 
-    .line 528
+    .line 501
+    .local v3, "container":Lcom/android/volley/toolbox/ImageLoader$ImageContainer;
     invoke-static {v3}, Lcom/android/volley/toolbox/ImageLoader$ImageContainer;->access$400(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;)Lcom/android/volley/toolbox/ImageLoader$ImageListener;
+
+    move-result-object v4
+
+    if-nez v4, :cond_0
+
+    .line 502
+    goto :goto_1
+
+    .line 504
+    :cond_0
+    invoke-virtual {v1}, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;->getError()Lcom/android/volley/VolleyError;
 
     move-result-object v4
 
     if-nez v4, :cond_1
 
-    goto :goto_0
-
-    .line 531
-    :cond_1
-    invoke-virtual {v1}, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;->getError()Lcom/android/volley/VolleyError;
-
-    move-result-object v4
-
-    if-nez v4, :cond_2
-
-    .line 532
+    .line 505
     invoke-static {v1}, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;->access$000(Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;)Landroid/graphics/Bitmap;
 
     move-result-object v4
 
     invoke-static {v3, v4}, Lcom/android/volley/toolbox/ImageLoader$ImageContainer;->access$502(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 533
+    .line 506
     invoke-static {v3}, Lcom/android/volley/toolbox/ImageLoader$ImageContainer;->access$400(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;)Lcom/android/volley/toolbox/ImageLoader$ImageListener;
 
     move-result-object v4
@@ -121,23 +125,31 @@
 
     invoke-interface {v4, v3, v5}, Lcom/android/volley/toolbox/ImageLoader$ImageListener;->onResponse(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;Z)V
 
-    goto :goto_0
+    goto :goto_2
 
-    .line 535
-    :cond_2
+    .line 508
+    :cond_1
     invoke-static {v3}, Lcom/android/volley/toolbox/ImageLoader$ImageContainer;->access$400(Lcom/android/volley/toolbox/ImageLoader$ImageContainer;)Lcom/android/volley/toolbox/ImageLoader$ImageListener;
-
-    move-result-object v3
-
-    invoke-virtual {v1}, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;->getError()Lcom/android/volley/VolleyError;
 
     move-result-object v4
 
-    invoke-interface {v3, v4}, Lcom/android/volley/toolbox/ImageLoader$ImageListener;->onErrorResponse(Lcom/android/volley/VolleyError;)V
+    invoke-virtual {v1}, Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;->getError()Lcom/android/volley/VolleyError;
 
+    move-result-object v5
+
+    invoke-interface {v4, v5}, Lcom/android/volley/toolbox/ImageLoader$ImageListener;->onErrorResponse(Lcom/android/volley/VolleyError;)V
+
+    .line 510
+    .end local v3    # "container":Lcom/android/volley/toolbox/ImageLoader$ImageContainer;
+    :goto_2
+    goto :goto_1
+
+    .line 511
+    .end local v1    # "bir":Lcom/android/volley/toolbox/ImageLoader$BatchedImageRequest;
+    :cond_2
     goto :goto_0
 
-    .line 539
+    .line 512
     :cond_3
     iget-object v0, p0, Lcom/android/volley/toolbox/ImageLoader$4;->this$0:Lcom/android/volley/toolbox/ImageLoader;
 
@@ -147,12 +159,13 @@
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 540
+    .line 513
     iget-object v0, p0, Lcom/android/volley/toolbox/ImageLoader$4;->this$0:Lcom/android/volley/toolbox/ImageLoader;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/android/volley/toolbox/ImageLoader;->access$602(Lcom/android/volley/toolbox/ImageLoader;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
+    .line 514
     return-void
 .end method

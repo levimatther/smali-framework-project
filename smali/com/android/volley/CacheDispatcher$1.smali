@@ -20,7 +20,7 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/volley/CacheDispatcher;
 
-.field final synthetic val$finalRequest:Lcom/android/volley/Request;
+.field final synthetic val$request:Lcom/android/volley/Request;
 
 
 # direct methods
@@ -28,14 +28,10 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/volley/CacheDispatcher;
 
-<<<<<<< HEAD
-    .line 158
-=======
     .line 191
->>>>>>> 4d1b24c5... Update volley
     iput-object p1, p0, Lcom/android/volley/CacheDispatcher$1;->this$0:Lcom/android/volley/CacheDispatcher;
 
-    iput-object p2, p0, Lcom/android/volley/CacheDispatcher$1;->val$finalRequest:Lcom/android/volley/Request;
+    iput-object p2, p0, Lcom/android/volley/CacheDispatcher$1;->val$request:Lcom/android/volley/Request;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,11 +43,7 @@
 .method public run()V
     .locals 2
 
-<<<<<<< HEAD
-    .line 162
-=======
     .line 195
->>>>>>> 4d1b24c5... Update volley
     :try_start_0
     iget-object v0, p0, Lcom/android/volley/CacheDispatcher$1;->this$0:Lcom/android/volley/CacheDispatcher;
 
@@ -59,15 +51,12 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/volley/CacheDispatcher$1;->val$finalRequest:Lcom/android/volley/Request;
+    iget-object v1, p0, Lcom/android/volley/CacheDispatcher$1;->val$request:Lcom/android/volley/Request;
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/BlockingQueue;->put(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-<<<<<<< HEAD
-    :catch_0
-=======
     .line 199
     goto :goto_0
 
@@ -86,6 +75,5 @@
     .line 200
     .end local v0    # "e":Ljava/lang/InterruptedException;
     :goto_0
->>>>>>> 4d1b24c5... Update volley
     return-void
 .end method

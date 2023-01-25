@@ -36,15 +36,9 @@
 
 # direct methods
 .method static constructor <clinit>()V
-<<<<<<< HEAD
-    .locals 7
-
-    .line 597
-=======
     .locals 9
 
     .line 567
->>>>>>> 4d1b24c5... Update volley
     new-instance v0, Lcom/android/volley/Request$Priority;
 
     const-string v1, "LOW"
@@ -55,80 +49,31 @@
 
     sput-object v0, Lcom/android/volley/Request$Priority;->LOW:Lcom/android/volley/Request$Priority;
 
-<<<<<<< HEAD
-    .line 598
-    new-instance v0, Lcom/android/volley/Request$Priority;
-
-    const-string v1, "NORMAL"
-
-    const/4 v3, 0x1
-=======
     .line 568
     new-instance v1, Lcom/android/volley/Request$Priority;
->>>>>>> 4d1b24c5... Update volley
 
     const-string v3, "NORMAL"
 
     const/4 v4, 0x1
 
-<<<<<<< HEAD
-    .line 599
-    new-instance v0, Lcom/android/volley/Request$Priority;
-
-    const-string v1, "HIGH"
-
-    const/4 v4, 0x2
-=======
     invoke-direct {v1, v3, v4}, Lcom/android/volley/Request$Priority;-><init>(Ljava/lang/String;I)V
 
     sput-object v1, Lcom/android/volley/Request$Priority;->NORMAL:Lcom/android/volley/Request$Priority;
->>>>>>> 4d1b24c5... Update volley
 
     .line 569
     new-instance v3, Lcom/android/volley/Request$Priority;
 
     const-string v5, "HIGH"
 
-<<<<<<< HEAD
-    .line 600
-    new-instance v0, Lcom/android/volley/Request$Priority;
-
-    const-string v1, "IMMEDIATE"
-
-    const/4 v5, 0x3
-=======
     const/4 v6, 0x2
 
     invoke-direct {v3, v5, v6}, Lcom/android/volley/Request$Priority;-><init>(Ljava/lang/String;I)V
->>>>>>> 4d1b24c5... Update volley
 
     sput-object v3, Lcom/android/volley/Request$Priority;->HIGH:Lcom/android/volley/Request$Priority;
 
     .line 570
     new-instance v5, Lcom/android/volley/Request$Priority;
 
-<<<<<<< HEAD
-    const/4 v1, 0x4
-
-    new-array v1, v1, [Lcom/android/volley/Request$Priority;
-
-    .line 596
-    sget-object v6, Lcom/android/volley/Request$Priority;->LOW:Lcom/android/volley/Request$Priority;
-
-    aput-object v6, v1, v2
-
-    sget-object v2, Lcom/android/volley/Request$Priority;->NORMAL:Lcom/android/volley/Request$Priority;
-
-    aput-object v2, v1, v3
-
-    sget-object v2, Lcom/android/volley/Request$Priority;->HIGH:Lcom/android/volley/Request$Priority;
-
-    aput-object v2, v1, v4
-
-    aput-object v0, v1, v5
-
-    sput-object v1, Lcom/android/volley/Request$Priority;->$VALUES:[Lcom/android/volley/Request$Priority;
-=======
     const-string v7, "IMMEDIATE"
 
     const/4 v8, 0x3
@@ -151,7 +96,6 @@
     aput-object v5, v7, v8
 
     sput-object v7, Lcom/android/volley/Request$Priority;->$VALUES:[Lcom/android/volley/Request$Priority;
->>>>>>> 4d1b24c5... Update volley
 
     return-void
 .end method
@@ -164,11 +108,7 @@
         }
     .end annotation
 
-<<<<<<< HEAD
-    .line 596
-=======
     .line 566
->>>>>>> 4d1b24c5... Update volley
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -178,30 +118,22 @@
     .locals 1
     .param p0, "name"    # Ljava/lang/String;
 
-<<<<<<< HEAD
-    .line 596
-=======
     .line 566
->>>>>>> 4d1b24c5... Update volley
     const-class v0, Lcom/android/volley/Request$Priority;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    move-result-object p0
+    move-result-object v0
 
-    check-cast p0, Lcom/android/volley/Request$Priority;
+    check-cast v0, Lcom/android/volley/Request$Priority;
 
-    return-object p0
+    return-object v0
 .end method
 
 .method public static values()[Lcom/android/volley/Request$Priority;
     .locals 1
 
-<<<<<<< HEAD
-    .line 596
-=======
     .line 566
->>>>>>> 4d1b24c5... Update volley
     sget-object v0, Lcom/android/volley/Request$Priority;->$VALUES:[Lcom/android/volley/Request$Priority;
 
     invoke-virtual {v0}, [Lcom/android/volley/Request$Priority;->clone()Ljava/lang/Object;

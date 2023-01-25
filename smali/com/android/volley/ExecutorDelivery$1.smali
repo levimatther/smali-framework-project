@@ -28,11 +28,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/android/volley/ExecutorDelivery;
 
-<<<<<<< HEAD
-    .line 39
-=======
     .line 35
->>>>>>> 4d1b24c5... Update volley
     iput-object p1, p0, Lcom/android/volley/ExecutorDelivery$1;->this$0:Lcom/android/volley/ExecutorDelivery;
 
     iput-object p2, p0, Lcom/android/volley/ExecutorDelivery$1;->val$handler:Landroid/os/Handler;
@@ -48,18 +44,11 @@
     .locals 1
     .param p1, "command"    # Ljava/lang/Runnable;
 
-<<<<<<< HEAD
-    .line 42
-=======
     .line 38
->>>>>>> 4d1b24c5... Update volley
     iget-object v0, p0, Lcom/android/volley/ExecutorDelivery$1;->val$handler:Landroid/os/Handler;
 
     invoke-virtual {v0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-<<<<<<< HEAD
-=======
     .line 39
->>>>>>> 4d1b24c5... Update volley
     return-void
 .end method

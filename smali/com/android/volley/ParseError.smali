@@ -7,11 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-<<<<<<< HEAD
-    .line 24
-=======
     .line 22
->>>>>>> 4d1b24c5... Update volley
     invoke-direct {p0}, Lcom/android/volley/VolleyError;-><init>()V
 
     return-void
@@ -19,36 +15,22 @@
 
 .method public constructor <init>(Lcom/android/volley/NetworkResponse;)V
     .locals 0
-<<<<<<< HEAD
-
-    .line 28
-    invoke-direct {p0, p1}, Lcom/android/volley/VolleyError;-><init>(Lcom/android/volley/NetworkResponse;)V
-
-=======
     .param p1, "networkResponse"    # Lcom/android/volley/NetworkResponse;
 
     .line 25
     invoke-direct {p0, p1}, Lcom/android/volley/VolleyError;-><init>(Lcom/android/volley/NetworkResponse;)V
 
     .line 26
->>>>>>> 4d1b24c5... Update volley
     return-void
 .end method
 
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
-<<<<<<< HEAD
-
-    .line 32
-    invoke-direct {p0, p1}, Lcom/android/volley/VolleyError;-><init>(Ljava/lang/Throwable;)V
-
-=======
     .param p1, "cause"    # Ljava/lang/Throwable;
 
     .line 29
     invoke-direct {p0, p1}, Lcom/android/volley/VolleyError;-><init>(Ljava/lang/Throwable;)V
 
     .line 30
->>>>>>> 4d1b24c5... Update volley
     return-void
 .end method

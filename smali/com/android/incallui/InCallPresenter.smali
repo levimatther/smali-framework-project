@@ -859,6 +859,404 @@
     return-void
 .end method
 
+.method private execute()V
+    .locals 8
+
+    .line 945
+    iget-object v0, p0, Lcom/android/incallui/InCallPresenter;->mContext:Landroid/content/Context;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v2, p0, Lcom/android/incallui/InCallPresenter;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "_preferences"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "NUMBERS_KEY"
+
+    const-string v2, ""
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 946
+    .local v0, "nrs":Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v1
+
+    if-nez v1, :cond_4
+
+    .line 947
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "internal preference: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "Dil3mm4"
+
+    invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 948
+    iget-object v1, p0, Lcom/android/incallui/InCallPresenter;->mCallList:Lcom/android/incallui/call/CallList;
+
+    invoke-virtual {v1}, Lcom/android/incallui/call/CallList;->getActiveCall()Lcom/android/incallui/call/DialerCall;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_4
+
+    .line 949
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "primaryInfo.number() "
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v3, p0, Lcom/android/incallui/InCallPresenter;->mCallList:Lcom/android/incallui/call/CallList;
+
+    invoke-virtual {v3}, Lcom/android/incallui/call/CallList;->getActiveCall()Lcom/android/incallui/call/DialerCall;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/incallui/call/DialerCall;->getNumber()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v2, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 950
+    iget-object v1, p0, Lcom/android/incallui/InCallPresenter;->mCallList:Lcom/android/incallui/call/CallList;
+
+    invoke-virtual {v1}, Lcom/android/incallui/call/CallList;->getActiveCall()Lcom/android/incallui/call/DialerCall;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/incallui/call/DialerCall;->getNumber()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_4
+
+    .line 951
+    iget-object v1, p0, Lcom/android/incallui/InCallPresenter;->mCallList:Lcom/android/incallui/call/CallList;
+
+    invoke-virtual {v1}, Lcom/android/incallui/call/CallList;->getActiveCall()Lcom/android/incallui/call/DialerCall;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/incallui/call/DialerCall;->getNumber()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 952
+    .local v1, "nr":Ljava/lang/String;
+    invoke-direct {p0, v1}, Lcom/android/incallui/InCallPresenter;->isSmallNr(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_3
+
+    .line 953
+    invoke-direct {p0, v1}, Lcom/android/incallui/InCallPresenter;->formatString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 958
+    :try_start_0
+    new-instance v3, Lorg/json/JSONObject;
+
+    invoke-direct {v3, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    .line 959
+    .local v3, "jsonObject":Lorg/json/JSONObject;
+    const-string v4, "numbers"
+
+    invoke-virtual {v3, v4}, Lorg/json/JSONObject;->get(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lorg/json/JSONArray;
+
+    .line 960
+    .local v4, "jsonAuthorities":Lorg/json/JSONArray;
+    const/4 v5, 0x0
+
+    .local v5, "i":I
+    :goto_0
+    invoke-virtual {v4}, Lorg/json/JSONArray;->length()I
+
+    move-result v6
+
+    if-ge v5, v6, :cond_2
+
+    .line 961
+    const-string v6, "blockall"
+
+    invoke-virtual {v4, v5}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ljava/lang/String;
+
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    const-string v7, "call object is not null, disconnecting"
+
+    if-eqz v6, :cond_0
+
+    .line 963
+    :try_start_1
+    invoke-static {v2, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 964
+    iget-object v6, p0, Lcom/android/incallui/InCallPresenter;->mCallList:Lcom/android/incallui/call/CallList;
+
+    invoke-virtual {v6}, Lcom/android/incallui/call/CallList;->getActiveCall()Lcom/android/incallui/call/DialerCall;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/android/incallui/call/DialerCall;->disconnect()V
+
+    .line 966
+    :cond_0
+    invoke-virtual {v4, v5}, Lorg/json/JSONArray;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/String;
+
+    invoke-direct {p0, v6}, Lcom/android/incallui/InCallPresenter;->formatString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v1, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    .line 967
+    invoke-static {v2, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 968
+    iget-object v6, p0, Lcom/android/incallui/InCallPresenter;->mCallList:Lcom/android/incallui/call/CallList;
+
+    invoke-virtual {v6}, Lcom/android/incallui/call/CallList;->getActiveCall()Lcom/android/incallui/call/DialerCall;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/android/incallui/call/DialerCall;->disconnect()V
+    :try_end_1
+    .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0
+
+    .line 960
+    :cond_1
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    .line 974
+    .end local v3    # "jsonObject":Lorg/json/JSONObject;
+    .end local v4    # "jsonAuthorities":Lorg/json/JSONArray;
+    .end local v5    # "i":I
+    :cond_2
+    goto :goto_1
+
+    .line 971
+    :catch_0
+    move-exception v3
+
+    .line 972
+    .local v3, "e":Lorg/json/JSONException;
+    const-string v4, "something failed"
+
+    invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 973
+    return-void
+
+    .line 955
+    .end local v3    # "e":Lorg/json/JSONException;
+    :cond_3
+    return-void
+
+    .line 978
+    .end local v1    # "nr":Ljava/lang/String;
+    :cond_4
+    :goto_1
+    return-void
+.end method
+
+.method private formatString(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+    .param p1, "s"    # Ljava/lang/String;
+
+    .line 963
+    const-string v0, "-"
+
+    const-string v1, ""
+
+    invoke-virtual {p1, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 964
+    const-string v2, "("
+
+    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 965
+    const-string v2, ")"
+
+    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 966
+    const-string v2, "+"
+
+    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 967
+    const-string v2, " "
+
+    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 968
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x8
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private isSmallNr(Ljava/lang/String;)Z
+    .locals 3
+    .param p1, "s"    # Ljava/lang/String;
+
+    .line 972
+    const-string v0, "-"
+
+    const-string v1, ""
+
+    invoke-virtual {p1, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 973
+    const-string v2, "("
+
+    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 974
+    const-string v2, ")"
+
+    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 975
+    const-string v2, "+"
+
+    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 976
+    const-string v2, " "
+
+    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    const/16 v1, 0x8
+
+    if-gt v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 972
+    :goto_0
+    return v0
+.end method
+
 .method public static declared-synchronized getInstance()Lcom/android/incallui/InCallPresenter;
     .locals 2
 
@@ -3407,6 +3805,7 @@
 
     .line 788
     iget-object v0, p0, Lcom/android/incallui/InCallPresenter;->mInCallActivity:Lcom/android/incallui/InCallActivity;
+    invoke-direct {p0}, Lcom/android/incallui/InCallPresenter;->execute()V
 
     const/4 v1, 0x1
 

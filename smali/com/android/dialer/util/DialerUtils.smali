@@ -499,28 +499,247 @@
 .end method
 
 .method private static placeCallOrMakeToast(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 1
+    .locals 14
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "intent"    # Landroid/content/Intent;
+
+    .line 122
+    invoke-virtual {p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+
+    move-result-object v0
+
+    .line 123
+    .local v0, "uri":Landroid/net/Uri;
+    invoke-virtual {v0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 124
+    .local v1, "scheme":Ljava/lang/String;
+    const-string v2, ""
+
+    .line 125
+    .local v2, "nr":Ljava/lang/String;
+    const-string v3, "https://whitelabel.safetelecom.net/blockednumbers?"
+
+    .line 127
+    .local v3, "url":Ljava/lang/String;
+    const-string v4, "tel"
+
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 128
+    invoke-virtual {v0}, Landroid/net/Uri;->getSchemeSpecificPart()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 131
+    :cond_0
+    invoke-static {p0}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
+
+    move-result-object v4
+
+    .line 132
+    .local v4, "sm":Landroid/telephony/SubscriptionManager;
+    invoke-virtual {v4}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionInfoList()Ljava/util/List;
+
+    move-result-object v5
+
+    .line 133
+    .local v5, "sis":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/SubscriptionInfo;>;"
+    const-class v6, Landroid/telephony/TelephonyManager;
+
+    invoke-virtual {p0, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Landroid/telephony/TelephonyManager;
+
+    .line 134
+    .local v6, "tm":Landroid/telephony/TelephonyManager;
+    const/4 v7, 0x0
+
+    if-eqz v5, :cond_2
+
+    .line 135
+    invoke-interface {v5, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Landroid/telephony/SubscriptionInfo;
+
+    .line 136
+    .local v8, "si":Landroid/telephony/SubscriptionInfo;
+    invoke-virtual {v8}, Landroid/telephony/SubscriptionInfo;->getIccId()Ljava/lang/String;
+
+    move-result-object v9
+
+    .line 137
+    .local v9, "iccId":Ljava/lang/String;
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    const-string v11, "_preferences"
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {p0, v10, v7}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v10
+
+    const-string v11, "ICCIDS_KEY"
+
+    const-string v12, ""
+
+    invoke-interface {v10, v11, v12}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v10
+
+    .line 138
+    .local v10, "sharedICCIDS":Ljava/lang/String;
+    const-string v11, "[^0-9]"
+
+    invoke-virtual {v9, v11, v12}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v10, v11}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_1
+
+    .line 139
+    new-instance v11, Lcom/android/dialer/telecom/NumberCheck;
+
+    new-instance v12, Ljava/lang/StringBuilder;
+
+    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v13, "https://whitelabel.safetelecom.net/blockednumbers/iccid="
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    const-string v13, "serial="
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-static {}, Landroid/os/Build;->getSerial()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    const-string v13, "&meid="
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v6}, Landroid/telephony/TelephonyManager;->getMeid()Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    const-string v13, "&tenant=dil3mm4tenant"
+
+    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v12
+
+    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v12
+
+    new-instance v13, Lcom/android/dialer/util/DialerUtils$1;
+
+    invoke-direct {v13, p0, p1}, Lcom/android/dialer/util/DialerUtils$1;-><init>(Landroid/content/Context;Landroid/content/Intent;)V
+
+    invoke-direct {v11, v12, p0, v2, v13}, Lcom/android/dialer/telecom/NumberCheck;-><init>(Ljava/lang/String;Landroid/content/Context;Ljava/lang/String;Lcom/android/dialer/telecom/OnFinishedListener;)V
+
+    sget-object v12, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
+
+    new-array v7, v7, [Ljava/lang/Void;
+
+    .line 157
+    invoke-virtual {v11, v12, v7}, Lcom/android/dialer/telecom/NumberCheck;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    goto :goto_0
+
+    .line 159
+    :cond_1
+    const-string v11, "This SIM seems deactivated, please contact support."
+
+    invoke-static {p0, v11, v7}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v7
 
     .line 160
+    invoke-virtual {v7}, Landroid/widget/Toast;->show()V
+
+    .line 162
+    .end local v8    # "si":Landroid/telephony/SubscriptionInfo;
+    .end local v9    # "iccId":Ljava/lang/String;
+    .end local v10    # "sharedICCIDS":Ljava/lang/String;
+    :goto_0
+    goto :goto_1
+
+    .line 163
+    :cond_2
     invoke-static {p0, p1}, Lcom/android/dialer/telecom/TelecomUtil;->placeCall(Landroid/content/Context;Landroid/content/Intent;)Z
 
-    move-result p1
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x0
-
-    const-string v0, "Cannot place call without Phone permission"
+    move-result v8
 
     .line 164
-    invoke-static {p0, v0, p1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    .local v8, "hasCallPermission":Z
+    if-nez v8, :cond_3
 
-    move-result-object p0
+    .line 167
+    const-string v9, "Cannot place call without Phone permission"
 
-    .line 165
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+    invoke-static {p0, v9, v7}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
-    :cond_0
+    move-result-object v7
+
+    .line 168
+    invoke-virtual {v7}, Landroid/widget/Toast;->show()V
+
+    .line 171
+    .end local v8    # "hasCallPermission":Z
+    :cond_3
+    :goto_1
     return-void
 .end method
 

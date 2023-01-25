@@ -29,21 +29,18 @@
     .param p2, "thread"    # J
     .param p4, "time"    # J
 
-<<<<<<< HEAD
-    .line 123
-=======
     .line 119
->>>>>>> 4d1b24c5... Update volley
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 124
+    .line 120
     iput-object p1, p0, Lcom/android/volley/VolleyLog$MarkerLog$Marker;->name:Ljava/lang/String;
 
-    .line 125
+    .line 121
     iput-wide p2, p0, Lcom/android/volley/VolleyLog$MarkerLog$Marker;->thread:J
 
-    .line 126
+    .line 122
     iput-wide p4, p0, Lcom/android/volley/VolleyLog$MarkerLog$Marker;->time:J
 
+    .line 123
     return-void
 .end method

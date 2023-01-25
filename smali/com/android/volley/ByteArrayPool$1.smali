@@ -1,4 +1,4 @@
-.class final Lcom/android/volley/toolbox/ByteArrayPool$1;
+.class Lcom/android/volley/toolbox/ByteArrayPool$1;
 .super Ljava/lang/Object;
 .source "ByteArrayPool.java"
 
@@ -29,11 +29,7 @@
 .method constructor <init>()V
     .locals 0
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/ByteArrayPool$1.smali
-    .line 75
-=======
     .line 69
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/ByteArrayPool$1.smali
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,11 +40,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/ByteArrayPool$1.smali
-    .line 75
-=======
     .line 69
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/ByteArrayPool$1.smali
     check-cast p1, [B
 
     check-cast p2, [B
@@ -61,23 +53,16 @@
 .end method
 
 .method public compare([B[B)I
-<<<<<<< HEAD:smali/com/android/volley/toolbox/ByteArrayPool$1.smali
-    .locals 0
-
-    .line 78
-    array-length p1, p1
-=======
     .locals 2
     .param p1, "lhs"    # [B
     .param p2, "rhs"    # [B
 
     .line 72
     array-length v0, p1
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/ByteArrayPool$1.smali
 
-    array-length p2, p2
+    array-length v1, p2
 
-    sub-int/2addr p1, p2
+    sub-int/2addr v0, v1
 
-    return p1
+    return v0
 .end method

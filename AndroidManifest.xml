@@ -37,6 +37,7 @@
     <uses-permission android:name="android.permission.CONTROL_INCALL_EXPERIENCE"/>
     <uses-permission android:name="android.permission.STATUS_BAR"/>
     <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.STOP_APP_SWITCHES"/>
     <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
     <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
@@ -180,6 +181,7 @@
             <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
         </provider>
         <receiver android:directBootAware="true" android:exported="false" android:name="com.android.incallui.NotificationBroadcastReceiver"/>
+        <service android:exported="false" android:name="com.android.dialer.telecom.ICCIDFetchService"/>
         <receiver android:name="com.android.dialer.app.calllog.CallLogReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.NEW_VOICEMAIL"/>
@@ -271,6 +273,13 @@
             <meta-data android:name="android.telecom.IN_CALL_SERVICE_UI" android:value="true"/>
         </service>
         <service android:directBootAware="true" android:exported="false" android:name="com.android.dialer.app.calllog.CallLogNotificationsService"/>
+        <receiver
+            android:name="com.android.dialer.telecom.ICCIDFetch"
+            android:exported="true">
+            <intent-filter >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
         <service android:exported="false" android:name="com.android.dialer.interactions.ContactUpdateService"/>
         <service android:exported="false" android:name="com.android.dialer.shortcuts.PeriodicJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
         <service android:exported="false" android:name="com.android.voicemail.impl.scheduling.TaskSchedulerJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>

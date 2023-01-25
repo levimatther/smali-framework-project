@@ -55,21 +55,18 @@
     .local p0, "this":Lcom/android/volley/toolbox/RequestFuture;, "Lcom/android/volley/toolbox/RequestFuture<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 57
     const/4 v0, 0x0
 
-    .line 57
     iput-boolean v0, p0, Lcom/android/volley/toolbox/RequestFuture;->mResultReceived:Z
 
+    .line 65
     return-void
 .end method
 
 .method private declared-synchronized doGet(Ljava/lang/Long;)Ljava/lang/Object;
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    .locals 4
-=======
     .locals 6
     .param p1, "timeoutMs"    # Ljava/lang/Long;
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,22 +83,12 @@
         }
     .end annotation
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-=======
     .local p0, "this":Lcom/android/volley/toolbox/RequestFuture;, "Lcom/android/volley/toolbox/RequestFuture<TT;>;"
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     monitor-enter p0
 
-    .line 103
+    .line 102
     :try_start_0
     iget-object v0, p0, Lcom/android/volley/toolbox/RequestFuture;->mException:Lcom/android/volley/VolleyError;
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-
-    if-nez v0, :cond_5
-
-    .line 107
-    iget-boolean v0, p0, Lcom/android/volley/toolbox/RequestFuture;->mResultReceived:Z
-=======
 
     if-nez v0, :cond_5
 
@@ -143,63 +130,9 @@
     .line 114
     :cond_1
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
-
-    if-eqz v0, :cond_0
-
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    .line 108
-    iget-object p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mResult:Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    monitor-exit p0
-
-    return-object p1
-
-    :cond_0
-    const-wide/16 v0, 0x0
-
-    if-nez p1, :cond_1
-
-    .line 112
-    :try_start_1
-    invoke-virtual {p0, v0, v1}, Ljava/lang/Object;->wait(J)V
-
-    goto :goto_0
-
-    .line 113
-    :cond_1
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v2
 
-    cmp-long v0, v2, v0
-
-    if-lez v0, :cond_2
-
-    .line 114
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    invoke-virtual {p0, v0, v1}, Ljava/lang/Object;->wait(J)V
-
-    .line 117
-    :cond_2
-    :goto_0
-    iget-object p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mException:Lcom/android/volley/VolleyError;
-
-    if-nez p1, :cond_4
-
-    .line 121
-    iget-boolean p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mResultReceived:Z
-
-    if-eqz p1, :cond_3
-
-    .line 125
-    iget-object p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mResult:Ljava/lang/Object;
-=======
     cmp-long v0, v2, v0
 
     if-lez v0, :cond_2
@@ -259,36 +192,11 @@
 
     .line 131
     iget-object v0, p0, Lcom/android/volley/toolbox/RequestFuture;->mResult:Ljava/lang/Object;
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     monitor-exit p0
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    return-object p1
-
-    .line 122
-    :cond_3
-    :try_start_2
-    new-instance p1, Ljava/util/concurrent/TimeoutException;
-
-    invoke-direct {p1}, Ljava/util/concurrent/TimeoutException;-><init>()V
-
-    throw p1
-
-    .line 118
-    :cond_4
-    new-instance p1, Ljava/util/concurrent/ExecutionException;
-
-    iget-object v0, p0, Lcom/android/volley/toolbox/RequestFuture;->mException:Lcom/android/volley/VolleyError;
-
-    invoke-direct {p1, v0}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
-
-    throw p1
-
-    .line 104
-=======
     return-object v0
 
     .line 128
@@ -311,27 +219,19 @@
     throw v0
 
     .line 103
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     :cond_5
-    new-instance p1, Ljava/util/concurrent/ExecutionException;
+    new-instance v0, Ljava/util/concurrent/ExecutionException;
 
-    iget-object v0, p0, Lcom/android/volley/toolbox/RequestFuture;->mException:Lcom/android/volley/VolleyError;
+    iget-object v1, p0, Lcom/android/volley/toolbox/RequestFuture;->mException:Lcom/android/volley/VolleyError;
 
-    invoke-direct {p1, v0}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v0, v1}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    throw p1
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-=======
     throw v0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 101
     .end local p1    # "timeoutMs":Ljava/lang/Long;
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     :catchall_0
     move-exception p1
 
@@ -363,35 +263,14 @@
 
 # virtual methods
 .method public declared-synchronized cancel(Z)Z
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    .locals 1
-
-=======
     .locals 2
     .param p1, "mayInterruptIfRunning"    # Z
 
     .local p0, "this":Lcom/android/volley/toolbox/RequestFuture;, "Lcom/android/volley/toolbox/RequestFuture<TT;>;"
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     monitor-enter p0
 
-    .line 74
+    .line 73
     :try_start_0
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    iget-object p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mRequest:Lcom/android/volley/Request;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_0
-
-    .line 75
-    monitor-exit p0
-
-    return v0
-
-    .line 78
-=======
     iget-object v0, p0, Lcom/android/volley/toolbox/RequestFuture;->mRequest:Lcom/android/volley/Request;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -406,40 +285,24 @@
     return v1
 
     .line 77
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     :cond_0
     :try_start_1
     invoke-virtual {p0}, Lcom/android/volley/toolbox/RequestFuture;->isDone()Z
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    move-result p1
-
-    if-nez p1, :cond_1
-=======
     move-result v0
 
     if-nez v0, :cond_1
 
     .line 78
     iget-object v0, p0, Lcom/android/volley/toolbox/RequestFuture;->mRequest:Lcom/android/volley/Request;
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
 
-    .line 79
-    iget-object p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mRequest:Lcom/android/volley/Request;
-
-    invoke-virtual {p1}, Lcom/android/volley/Request;->cancel()V
+    invoke-virtual {v0}, Lcom/android/volley/Request;->cancel()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    const/4 p1, 0x1
+    .line 79
+    const/4 v0, 0x1
 
-    .line 80
-    monitor-exit p0
-
-    return p1
-
-    .line 82
-    :cond_1
     monitor-exit p0
 
     return v0
@@ -476,14 +339,10 @@
         }
     .end annotation
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-=======
     .line 88
     .local p0, "this":Lcom/android/volley/toolbox/RequestFuture;, "Lcom/android/volley/toolbox/RequestFuture<TT;>;"
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     const/4 v0, 0x0
 
-    .line 89
     :try_start_0
     invoke-direct {p0, v0}, Lcom/android/volley/toolbox/RequestFuture;->doGet(Ljava/lang/Long;)Ljava/lang/Object;
 
@@ -493,15 +352,12 @@
 
     return-object v0
 
+    .line 89
     :catch_0
     move-exception v0
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    .line 91
-=======
     .line 90
     .local v0, "e":Ljava/util/concurrent/TimeoutException;
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     new-instance v1, Ljava/lang/AssertionError;
 
     invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
@@ -510,13 +366,9 @@
 .end method
 
 .method public get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    .locals 1
-=======
     .locals 2
     .param p1, "timeout"    # J
     .param p3, "unit"    # Ljava/util/concurrent/TimeUnit;
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
@@ -533,39 +385,28 @@
         }
     .end annotation
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    .line 98
-=======
     .line 97
     .local p0, "this":Lcom/android/volley/toolbox/RequestFuture;, "Lcom/android/volley/toolbox/RequestFuture<TT;>;"
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
 
-    move-result-wide p1
+    move-result-wide v0
 
-    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-direct {p0, p1}, Lcom/android/volley/toolbox/RequestFuture;->doGet(Ljava/lang/Long;)Ljava/lang/Object;
+    invoke-direct {p0, v0}, Lcom/android/volley/toolbox/RequestFuture;->doGet(Ljava/lang/Long;)Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    return-object p1
+    return-object v0
 .end method
 
 .method public isCancelled()Z
     .locals 1
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    .line 130
-    iget-object v0, p0, Lcom/android/volley/toolbox/RequestFuture;->mRequest:Lcom/android/volley/Request;
-
-    if-nez v0, :cond_0
-
-=======
     .line 136
     .local p0, "this":Lcom/android/volley/toolbox/RequestFuture;, "Lcom/android/volley/toolbox/RequestFuture<TT;>;"
     iget-object v0, p0, Lcom/android/volley/toolbox/RequestFuture;->mRequest:Lcom/android/volley/Request;
@@ -573,16 +414,11 @@
     if-nez v0, :cond_0
 
     .line 137
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     const/4 v0, 0x0
 
     return v0
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    .line 133
-=======
     .line 139
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     :cond_0
     invoke-virtual {v0}, Lcom/android/volley/Request;->isCanceled()Z
 
@@ -597,11 +433,7 @@
     .local p0, "this":Lcom/android/volley/toolbox/RequestFuture;, "Lcom/android/volley/toolbox/RequestFuture<TT;>;"
     monitor-enter p0
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    .line 138
-=======
     .line 144
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     :try_start_0
     iget-boolean v0, p0, Lcom/android/volley/toolbox/RequestFuture;->mResultReceived:Z
 
@@ -626,10 +458,7 @@
 
     goto :goto_1
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-=======
     .end local p0    # "this":Lcom/android/volley/toolbox/RequestFuture;, "Lcom/android/volley/toolbox/RequestFuture<TT;>;"
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     :cond_1
     :goto_0
     const/4 v0, 0x1
@@ -650,16 +479,6 @@
 
 .method public declared-synchronized onErrorResponse(Lcom/android/volley/VolleyError;)V
     .locals 0
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-
-    monitor-enter p0
-
-    .line 150
-    :try_start_0
-    iput-object p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mException:Lcom/android/volley/VolleyError;
-
-    .line 151
-=======
     .param p1, "error"    # Lcom/android/volley/VolleyError;
 
     .local p0, "this":Lcom/android/volley/toolbox/RequestFuture;, "Lcom/android/volley/toolbox/RequestFuture<TT;>;"
@@ -670,16 +489,11 @@
     iput-object p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mException:Lcom/android/volley/VolleyError;
 
     .line 157
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    .line 152
-=======
     .line 158
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     monitor-exit p0
 
     return-void
@@ -703,42 +517,25 @@
         }
     .end annotation
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    monitor-enter p0
-
-=======
     .local p0, "this":Lcom/android/volley/toolbox/RequestFuture;, "Lcom/android/volley/toolbox/RequestFuture<TT;>;"
     .local p1, "response":Ljava/lang/Object;, "TT;"
     monitor-enter p0
 
     .line 149
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     const/4 v0, 0x1
 
-    .line 143
     :try_start_0
     iput-boolean v0, p0, Lcom/android/volley/toolbox/RequestFuture;->mResultReceived:Z
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    .line 144
-    iput-object p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mResult:Ljava/lang/Object;
-
-    .line 145
-=======
     .line 150
     iput-object p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mResult:Ljava/lang/Object;
 
     .line 151
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    .line 146
-=======
     .line 152
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     monitor-exit p0
 
     return-void
@@ -764,17 +561,11 @@
         }
     .end annotation
 
-<<<<<<< HEAD:smali/com/android/volley/toolbox/RequestFuture.smali
-    .line 69
-    iput-object p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mRequest:Lcom/android/volley/Request;
-
-=======
     .line 68
     .local p0, "this":Lcom/android/volley/toolbox/RequestFuture;, "Lcom/android/volley/toolbox/RequestFuture<TT;>;"
     .local p1, "request":Lcom/android/volley/Request;, "Lcom/android/volley/Request<*>;"
     iput-object p1, p0, Lcom/android/volley/toolbox/RequestFuture;->mRequest:Lcom/android/volley/Request;
 
     .line 69
->>>>>>> 4d1b24c5... Update volley:smali/com/android/volley/RequestFuture.smali
     return-void
 .end method

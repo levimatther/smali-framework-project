@@ -26,8 +26,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/volley/toolbox/ImageLoader;Ljava/lang/String;)V
     .locals 0
+    .param p1, "this$0"    # Lcom/android/volley/toolbox/ImageLoader;
 
-    .line 285
+    .line 283
     iput-object p1, p0, Lcom/android/volley/toolbox/ImageLoader$3;->this$0:Lcom/android/volley/toolbox/ImageLoader;
 
     iput-object p2, p0, Lcom/android/volley/toolbox/ImageLoader$3;->val$cacheKey:Ljava/lang/String;
@@ -41,13 +42,15 @@
 # virtual methods
 .method public onErrorResponse(Lcom/android/volley/VolleyError;)V
     .locals 2
+    .param p1, "error"    # Lcom/android/volley/VolleyError;
 
-    .line 288
+    .line 286
     iget-object v0, p0, Lcom/android/volley/toolbox/ImageLoader$3;->this$0:Lcom/android/volley/toolbox/ImageLoader;
 
     iget-object v1, p0, Lcom/android/volley/toolbox/ImageLoader$3;->val$cacheKey:Ljava/lang/String;
 
     invoke-virtual {v0, v1, p1}, Lcom/android/volley/toolbox/ImageLoader;->onGetImageError(Ljava/lang/String;Lcom/android/volley/VolleyError;)V
 
+    .line 287
     return-void
 .end method
