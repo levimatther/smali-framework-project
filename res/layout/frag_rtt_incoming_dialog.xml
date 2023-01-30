@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="#ff000000" android:id="@id/more_information" android:background="@drawable/rtt_call_dialog_shape" android:paddingLeft="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/rtt_request_dialog_details" />
+    <MenuBar android:id="@id/rttMenu_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

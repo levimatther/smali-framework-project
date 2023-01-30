@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_incoming_call_wifi">수신 WLAN 전화</string>
+    <string name="notification_incoming_work_call_wifi">수신 WLAN 업무 전화</string>
+    <string name="notification_ongoing_call_wifi">발신 WLAN 전화</string>
+    <string name="notification_ongoing_work_call_wifi">발신 WLAN 업무 전화</string>
+</resources>

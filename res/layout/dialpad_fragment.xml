@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@color/list_selector_background_unfocus" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="0.0dip" android:layout_above="@id/menu_bar">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/dialer_input_container" android:background="@color/dialer_input_color" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <EditText android:textSize="32.0px" android:textStyle="bold" android:textColorHint="@color/dialer_actionbar_theme_color" android:id="@id/dialer_input" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0px" android:layout_marginTop="31.0px" android:layout_marginRight="10.0px" android:maxLines="2" android:inputType="textMultiLine" android:textCursorDrawable="@drawable/dialer_input_edittext_cursor" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/fragment_layout" android:background="@color/list_selector_background_unfocus" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="108.0dip">
+                <LinearLayout android:gravity="center_horizontal" android:background="@color/dialer_input_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="4.0px">
+                    <ImageView android:background="@drawable/white_down" android:layout_width="wrap_content" android:layout_height="16.0px" />
+                </LinearLayout>
+                <fragment android:name="com.android.dialer.app.list.SmartDialSearchFragment" android:id="@id/fragment" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </LinearLayout>
+            <TextView android:textSize="18.0px" android:textStyle="bold" android:textColor="@color/blocked_number_block_color" android:gravity="bottom|center" android:id="@id/emergency_text" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="20.0px" android:text="@string/emergency_call_text" />
+            <include android:id="@id/speed_dial_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="108.0dip" layout="@layout/speed_dialnumber" />
+        </FrameLayout>
+    </LinearLayout>
+    <MenuBar android:id="@id/menu_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+</RelativeLayout>

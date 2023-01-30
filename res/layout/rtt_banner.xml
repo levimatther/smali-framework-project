@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/dialer_theme_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="3.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/rttHoldBanner" android:layout_width="fill_parent" android:layout_height="38.0dip">
+        <TextView android:textSize="16.0sp" android:textColor="#ffffffff" android:id="@id/rtt_name_or_number" android:paddingLeft="10.0dip" android:paddingTop="11.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:fontFamily="sans-serif-medium" />
+        <Chronometer android:textSize="16.0sp" android:textColor="#ffffffff" android:id="@id/rtt_timer" android:paddingLeft="11.0dip" android:paddingTop="11.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:layout_toRightOf="@id/rtt_name_or_number" />
+        <ImageView android:id="@id/rtt_end_call_button" android:paddingTop="8.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/rtt" android:scaleType="fitXY" android:tint="#ffffffff" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rtt_on_hold_banner" android:background="@color/dialer_input_color_dark" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="32.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="#ffffffff" android:id="@id/callNameOrNumber" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="6.0dip" android:text="TestName" android:maxEms="14" android:singleLine="true" />
+        <TextView android:textColor="#ffffffff" android:id="@id/rtt_hold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginRight="6.0dip" android:text="@string/notification_on_hold" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</LinearLayout>

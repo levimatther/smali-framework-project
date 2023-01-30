@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_incoming_call_wifi">Telefonatë hyrëse nëpërmjet WLAN</string>
+    <string name="notification_incoming_work_call_wifi">Telefonatë pune hyrëse nëpërmjet WLAN</string>
+    <string name="notification_ongoing_call_wifi">Telefonatë në vazhdim nëpërmjet WLAN</string>
+    <string name="notification_ongoing_work_call_wifi">Telefonatë pune në vazhdim nëpërmjet WLAN</string>
+</resources>

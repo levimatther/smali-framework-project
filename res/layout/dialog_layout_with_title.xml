@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/dailog_border" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="80.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:gravity="center" android:id="@id/tv_title" android:background="@drawable/dailog_border_title" android:layout_width="fill_parent" android:layout_height="36.0px" />
+    <TextView android:textSize="16.0sp" android:textColor="#ff000000" android:gravity="center" android:id="@id/dialog_text" android:padding="16.0px" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    <MenuBar android:layout_gravity="bottom" android:id="@id/menu_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

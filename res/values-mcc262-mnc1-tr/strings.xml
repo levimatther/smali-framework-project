@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_incoming_call_wifi">WLAN Üzerinden Gelen Çağrı</string>
+    <string name="notification_incoming_work_call_wifi">WLAN üzerinden gelen, işle ilgili çağrı</string>
+    <string name="notification_ongoing_call_wifi">WLAN Üzerinden Devam Eden Çağrı</string>
+    <string name="notification_ongoing_work_call_wifi">WLAN üzerinden devam eden, işle ilgili çağrı</string>
+</resources>

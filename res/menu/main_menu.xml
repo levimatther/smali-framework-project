@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/quantum_ic_search_white_24" android:id="@id/search" android:title="@string/search" android:contentDescription="@string/description_search" app:showAsAction="always" />
+    <item android:icon="@drawable/quantum_ic_person_white_24" android:id="@id/contacts" android:title="@string/contacts" android:contentDescription="@string/description_contacts" app:showAsAction="always" />
+    <item android:id="@id/call_history" android:title="@string/tab_title_call_history" app:showAsAction="collapseActionView" />
+    <item android:id="@id/settings" android:title="@string/settings" app:showAsAction="collapseActionView" />
+    <item android:id="@id/feedback" android:title="@string/main_send_feedback" app:showAsAction="collapseActionView" />
+</menu>

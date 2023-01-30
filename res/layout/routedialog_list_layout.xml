@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/routedialog_border" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/title_panel" android:background="@drawable/routediallog_textborder" android:layout_width="fill_parent" android:layout_height="36.0px">
+        <TextView android:textSize="18.0px" android:textColor="#ff000000" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="21.0px" />
+    </LinearLayout>
+    <ListView android:textColor="#ff000000" android:id="@id/dialog_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@drawable/routelist_item_background" android:divider="#fff1f2f5" android:dividerHeight="1.0dip" android:layout_weight="1.0" />
+    <RelativeLayout android:gravity="center_vertical" android:background="#ff474747" android:layout_width="fill_parent" android:layout_height="30.0px">
+        <TextView android:textColor="#ffffffff" android:gravity="center" android:id="@id/route_dialog__button" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/add_call_select" />
+    </RelativeLayout>
+</LinearLayout>

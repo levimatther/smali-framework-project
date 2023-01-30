@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/calllog_frame" android:background="@color/list_selector_background_unfocus" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@color/dialer_input_color" android:layout_width="fill_parent" android:layout_height="38.0px" android:elevation="4.0dip">
+        <ImageView android:gravity="center_vertical" android:id="@id/left_indictor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="9.0px" android:src="@drawable/white_left" />
+        <TextView android:textSize="20.0px" android:textColor="@color/white_color" android:gravity="center" android:id="@id/mytext_view" android:background="@color/dialer_input_color" android:layout_width="wrap_content" android:layout_height="38.0px" android:text="@string/calllog_all" android:layout_weight="4.0" android:layout_centerVertical="true" android:fontFamily="sans-serif" />
+        <ImageView android:gravity="center_vertical" android:id="@id/right_indictor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="9.0px" android:src="@drawable/white_right" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/call_log_tab" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="0.0dip">
+        <TextView android:id="@id/tab_all" android:background="#ff838b8b" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="3.0dip" android:layout_weight="1.0" />
+        <TextView android:id="@id/tab_received" android:background="#ff838b8b" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="3.0dip" android:layout_weight="1.0" />
+        <TextView android:id="@id/tab_dialed" android:background="#ff838b8b" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="3.0dip" android:layout_weight="1.0" />
+        <TextView android:id="@id/tab_missed" android:background="#ff838b8b" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="3.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+    <com.android.dialer.app.calllog.CallLogViewPager android:id="@id/call_log_pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <MenuBar android:id="@id/call_log_activity_menu_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+</LinearLayout>

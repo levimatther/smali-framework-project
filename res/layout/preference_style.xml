@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:background="@drawable/item_select_bg" android:paddingRight="?android:scrollbarSize" android:focusable="true" android:layout_width="fill_parent" android:layout_height="38.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingLeft="10.0px" android:paddingRight="10.0px" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="18.0px" android:textColor="@color/setting_title_color_selector" android:ellipsize="marquee" android:id="@android:id/title" android:fadingEdge="horizontal" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    </RelativeLayout>
+</LinearLayout>

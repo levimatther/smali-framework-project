@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_incoming_call_wifi">Вхідний виклик у мережі WLAN</string>
+    <string name="notification_incoming_work_call_wifi">Вхідний робочий виклик у мережі WLAN</string>
+    <string name="notification_ongoing_call_wifi">Триває виклик у мережі WLAN</string>
+    <string name="notification_ongoing_work_call_wifi">Триває робочий виклик у мережі WLAN</string>
+</resources>

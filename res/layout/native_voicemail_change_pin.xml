@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:background="@color/vvm_actionbar_bg" android:layout_width="fill_parent" android:layout_height="38.0px">
+        <com.android.voicemail.impl.TitleMarqueTextView android:textSize="20.0px" android:textColor="@color/white" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/change_pin_title" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <LinearLayout android:orientation="vertical" android:id="@id/pin_entry_layout" android:background="@drawable/item_select_bg" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="18.0dip" android:paddingEnd="18.0dip">
+                    <TextView android:textSize="16.0px" android:gravity="left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="@string/enter_current_pin" />
+                    <EditText android:textSize="16.0sp" android:gravity="left" android:layout_gravity="center" android:id="@id/pin_entry" android:background="@drawable/bg_edittext" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0px" android:hint="@string/voicemail_pin_hint" android:maxLength="9" android:inputType="numberPassword" android:imeOptions="actionNext|flagNoExtractUi" android:paddingStart="10.0dip" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/pin_new_entry_layout" android:background="@drawable/item_select_bg" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="18.0dip" android:paddingEnd="18.0dip">
+                    <TextView android:textSize="16.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="@string/enter_new_pin" android:layout_alignParentLeft="true" />
+                    <EditText android:textSize="16.0sp" android:gravity="left" android:layout_gravity="center" android:id="@id/pin_new_entry" android:background="@drawable/bg_edittext" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0px" android:hint="@string/voicemail_pin_hint" android:maxLength="9" android:inputType="numberPassword" android:imeOptions="actionNext|flagNoExtractUi" android:paddingStart="10.0dip" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/pin_confirm_entry_layout" android:background="@drawable/item_select_bg" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="18.0dip" android:paddingEnd="18.0dip">
+                    <TextView android:textSize="16.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="@string/re_enter_new_pin" android:layout_alignParentLeft="true" />
+                    <EditText android:textSize="16.0sp" android:gravity="left" android:layout_gravity="center_vertical" android:id="@id/pin_confirm_entry" android:background="@drawable/bg_edittext" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0px" android:hint="@string/voicemail_pin_hint" android:maxLength="9" android:inputType="numberPassword" android:imeOptions="actionNext|flagNoExtractUi" android:paddingStart="10.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

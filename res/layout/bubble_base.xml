@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/bubble_drawer_shadow_provider" android:background="@drawable/bubble_ripple_circle" android:visibility="invisible" android:layout_width="@dimen/bubble_size" android:layout_height="@dimen/bubble_size" android:layout_marginTop="@dimen/bubble_shadow_padding_size" android:layout_marginBottom="@dimen/bubble_shadow_padding_size" android:layout_marginStart="@dimen/bubble_shadow_padding_size" android:elevation="10.0dip" android:backgroundTint="@android:color/transparent" />
+    <FrameLayout android:paddingTop="@dimen/bubble_shadow_padding_size" android:paddingBottom="@dimen/bubble_shadow_padding_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingEnd="@dimen/bubble_shadow_padding_size" android:layout_marginStart="48.0dip" android:elevation="10.0dip">
+        <LinearLayout android:orientation="horizontal" android:id="@id/bubble_expanded_layout" android:background="@drawable/bubble_background_pill_ltr" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layoutDirection="inherit" android:paddingStart="32.0dip" android:paddingEnd="8.0dip">
+            <com.android.dialershared.bubble.CheckableImageButton android:id="@id/bubble_icon_first" android:padding="@dimen/bubble_icon_padding" android:layout_width="@dimen/bubble_size" android:layout_height="@dimen/bubble_size" android:tint="@color/bubble_icon_tint_states" android:layout_marginStart="4.0dip" android:tintMode="src_in" />
+            <com.android.dialershared.bubble.CheckableImageButton android:id="@id/bubble_icon_second" android:padding="@dimen/bubble_icon_padding" android:layout_width="@dimen/bubble_size" android:layout_height="@dimen/bubble_size" android:tint="@color/bubble_icon_tint_states" android:layout_marginStart="4.0dip" android:tintMode="src_in" />
+            <com.android.dialershared.bubble.CheckableImageButton android:id="@id/bubble_icon_third" android:padding="@dimen/bubble_icon_padding" android:layout_width="@dimen/bubble_size" android:layout_height="@dimen/bubble_size" android:tint="@color/bubble_icon_tint_states" android:layout_marginStart="4.0dip" android:tintMode="src_in" />
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="start" android:id="@id/bubble_primary_container" android:clipChildren="false" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:animateLayoutChanges="true" android:elevation="12.0dip">
+        <ViewAnimator android:id="@id/bubble_button_primary" android:background="@drawable/bubble_ripple_circle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/bubble_shadow_padding_size" android:measureAllChildren="false">
+            <ImageView android:id="@id/bubble_icon_primary" android:padding="@dimen/bubble_icon_padding" android:layout_width="@dimen/bubble_size" android:layout_height="@dimen/bubble_size" android:tint="@android:color/white" android:tintMode="src_in" />
+            <TextView android:textAppearance="@style/TextAppearance.AppCompat" android:gravity="center" android:id="@id/bubble_text" android:layout_width="wrap_content" android:layout_height="@dimen/bubble_size" android:minWidth="@dimen/bubble_size" android:paddingStart="@dimen/bubble_icon_padding" android:paddingEnd="@dimen/bubble_icon_padding" />
+        </ViewAnimator>
+    </FrameLayout>
+</FrameLayout>

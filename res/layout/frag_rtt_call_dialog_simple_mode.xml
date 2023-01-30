@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="24.0px" android:textStyle="bold" android:textColor="@drawable/dialer_item_text_selector" android:gravity="center|left" android:id="@id/voice_call" android:background="@drawable/rtt_call_dialog_shape_dish" android:paddingLeft="10.0dip" android:layout_width="fill_parent" android:layout_height="42.0px" android:text="@string/rtt_voice_call" />
+    <TextView android:textSize="24.0px" android:textStyle="bold" android:textColor="@drawable/dialer_item_text_selector" android:gravity="center|left" android:id="@id/rtt_call" android:background="@drawable/shape_corner_unfocus_dish" android:paddingLeft="10.0dip" android:layout_width="fill_parent" android:layout_height="42.0px" android:text="@string/rtt_call" />
+</LinearLayout>

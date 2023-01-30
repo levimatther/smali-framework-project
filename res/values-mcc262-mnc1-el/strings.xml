@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_incoming_call_wifi">Εισερχόμενη κλήση μέσω WLAN</string>
+    <string name="notification_incoming_work_call_wifi">Εισερχόμενη επαγγελματική κλήση μέσω WLAN</string>
+    <string name="notification_ongoing_call_wifi">Κλήση μέσω WLAN σε εξέλιξη</string>
+    <string name="notification_ongoing_work_call_wifi">Επαγγελματική κλήση μέσω WLAN σε εξέλιξη</string>
+</resources>

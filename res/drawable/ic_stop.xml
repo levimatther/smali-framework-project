@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="24.0dip" android:width="24.0dip" android:viewportWidth="24.0" android:viewportHeight="24.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/voicemail_icon_disabled_tint" android:pathData="M0,0h24v24h-24z" android:strokeColor="#00000000" android:strokeWidth="1.0" android:fillAlpha="0.0" android:fillType="evenOdd" />
+    <path android:fillColor="@color/voicemail_icon_disabled_tint" android:pathData="M8,6L16,6C17.1,6 18,6.9 18,8L18,16C18,17.1 17.1,18 16,18L8,18C6.9,18 6,17.1 6,16L6,8C6,6.9 6.9,6 8,6Z" android:strokeColor="#00000000" android:strokeWidth="1.0" android:fillAlpha="0.87" android:fillType="nonZero" />
+</vector>

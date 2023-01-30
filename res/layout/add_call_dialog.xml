@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/add_call_shape" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="#ff000000" android:gravity="center" android:id="@id/add_call_dialog_title" android:background="@drawable/add_call_shape" android:layout_width="fill_parent" android:layout_height="34.0px" android:text="@string/dialer_addAnotherCall" />
+    <ListView android:id="@id/main_list_view" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/add_call_menubar" android:background="#ff474747" android:layout_width="fill_parent" android:layout_height="30.0px">
+        <TextView android:textSize="14.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/menu_bar_text" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>

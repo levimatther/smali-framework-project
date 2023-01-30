@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/list_selector_background_unfocus" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:background="@color/dialer_input_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="4.0px">
+        <ImageView android:background="@drawable/white_down" android:layout_width="wrap_content" android:layout_height="16.0px" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:paddingLeft="10.0px" android:paddingTop="4.0px" android:paddingRight="10.0px" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.android.dialer.app.dialpad.MarqueTextView android:textSize="16.0sp" android:textColor="@color/list_selector_text_unfocus" android:ellipsize="marquee" android:id="@id/speed_dial_name" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="220.0px" android:layout_height="wrap_content" android:text="Baobao" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:paddingLeft="10.0px" android:paddingRight="10.0px" android:paddingBottom="5.0px" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="14.0sp" android:textColor="@color/speed_dial_color" android:id="@id/speed_dial_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="22.0px" android:text="@string/phone_type" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/speed_dial_color" android:ellipsize="marquee" android:id="@id/speed_dial_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\ 18305147509" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+    </LinearLayout>
+</LinearLayout>

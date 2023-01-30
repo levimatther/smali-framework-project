@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_incoming_call_wifi">Кіріс қоңырау WLAN арқылы шалынуда</string>
+    <string name="notification_incoming_work_call_wifi">Кіріс жұмыс қоңырауы WLAN арқылы шалынуда</string>
+    <string name="notification_ongoing_call_wifi">Қоңырау WLAN арқылы шалынуда</string>
+    <string name="notification_ongoing_work_call_wifi">Жұмыс қоңырау WLAN арқылы шалынуда</string>
+</resources>

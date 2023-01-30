@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:background="@color/vvm_actionbar_bg" android:layout_width="fill_parent" android:layout_height="38.0px">
+        <TextView android:textSize="20.0px" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/visual_voicemail_tilte" />
+    </androidx.appcompat.widget.Toolbar>
+    <fragment android:name="com.android.dialer.app.calllog.VisualVoicemailCallLogFragment" android:id="@id/fragment_container_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <MenuBar android:id="@id/visual_voicemail_menu_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+</LinearLayout>

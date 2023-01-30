@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_incoming_call_wifi">Chamada entrante a través de WLAN</string>
+    <string name="notification_incoming_work_call_wifi">Chamada de traballo entrante a través de WLAN</string>
+    <string name="notification_ongoing_call_wifi">Chamada en curso a través de WLAN</string>
+    <string name="notification_ongoing_work_call_wifi">Chamada de traballo en curso a través de WLAN</string>
+</resources>

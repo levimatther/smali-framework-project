@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_incoming_call_wifi">Przychodzące połączenie przez WLAN</string>
+    <string name="notification_incoming_work_call_wifi">Przychodzące połączenie służbowe przez WLAN</string>
+    <string name="notification_ongoing_call_wifi">Trwające połączenie przez WLAN</string>
+    <string name="notification_ongoing_work_call_wifi">Trwające połączenie służbowe przez WLAN</string>
+</resources>

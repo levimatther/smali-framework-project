@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:background="@color/vvm_actionbar_bg" android:layout_width="fill_parent" android:layout_height="38.0px">
+        <com.android.voicemail.impl.TitleMarqueTextView android:textSize="20.0px" android:textColor="@color/white" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/change_pin_title" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <TextView android:textSize="16.0px" android:textStyle="bold" android:gravity="left" android:id="@id/pin_entry_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/voicemail_entry_pin_title" />
+            <TextView android:textSize="16.0px" android:textStyle="bold" android:textColor="@android:color/holo_red_light" android:gravity="left" android:id="@id/pin_error_tip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/enter_current_pin" />
+            <EditText android:textSize="12.0sp" android:gravity="left" android:layout_gravity="center" android:id="@id/pin_new_entry" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLength="9" android:inputType="numberPassword" android:imeOptions="actionNext|flagNoExtractUi" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

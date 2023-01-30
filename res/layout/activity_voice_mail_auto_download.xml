@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0px" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/native_voicemail_automatically_download_summary" />
+    <RadioGroup android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RadioButton android:textSize="18.0px" android:textColor="@color/setting_title_color_selector" android:id="@id/alarm_add_vibrate_on" android:background="@drawable/item_select_bg" android:layout_width="fill_parent" android:layout_height="@dimen/auto_download_radio_height" android:button="@null" android:text="@string/voicemail_autodownload_on" android:drawableLeft="@drawable/setting_auto_download_button" android:drawablePadding="10.0px" android:paddingStart="@dimen/fab_elevation" />
+        <RadioButton android:textSize="18.0px" android:textColor="@color/setting_title_color_selector" android:id="@id/alarm_add_vibrate_off" android:background="@drawable/item_select_bg" android:layout_width="fill_parent" android:layout_height="@dimen/auto_download_radio_height" android:checked="true" android:button="@null" android:text="@string/voicemail_autodownload_off" android:drawableLeft="@drawable/setting_auto_download_button" android:drawablePadding="10.0px" android:paddingStart="@dimen/fab_elevation" />
+    </RadioGroup>
+</LinearLayout>

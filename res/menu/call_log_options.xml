@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/delete_all" android:orderInCategory="1" android:title="@string/call_log_delete_all" android:showAsAction="never" />
+    <item android:id="@id/menu_save_as_new_contact" android:title="@string/save_as_new_contact" />
+    <item android:id="@id/menu_add_to_existing_contact" android:title="@string/add_to_exsit_contact" />
+    <item android:id="@id/menu_send_message" android:title="@string/send_to_message" />
+    <item android:id="@id/menu_add_to_speed_dial" android:title="@string/add_to_speed_dial" />
+    <item android:id="@id/menu_add_to_pinboard" android:title="@string/add_to_pinboard" />
+    <item android:icon="@drawable/ic_delete_24dp" android:id="@id/menu_remove_from_call_log" android:title="@string/recentCalls_removeFromRecentList" android:showAsAction="ifRoom" />
+    <item android:id="@id/menu_clear_all" android:title="@string/clear_call_history" />
+    <item android:id="@id/menu_calllog_details" android:title="@string/call_information" />
+</menu>

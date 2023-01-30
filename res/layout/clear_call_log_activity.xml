@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/shape_clear_all" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0px" android:textColor="#ff000000" android:gravity="left" android:id="@id/dialog_text" android:paddingTop="20.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/clear_all_call_log" android:layout_weight="1.0" />
+    <MenuBar android:layout_gravity="bottom" android:id="@id/menu_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

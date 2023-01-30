@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/rtt_banner" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/rtt_recycler_view" android:background="#fff1f2f5" android:paddingBottom="70.0dip" android:focusable="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+        <LinearLayout android:orientation="vertical" android:background="@color/dialer_input_color_dark" android:layout_width="fill_parent" android:layout_height="58.0dip">
+            <TextView android:textSize="12.0sp" android:textColor="@drawable/dialer_item_text_selector" android:layout_gravity="center_vertical" android:id="@id/message_lable" android:layout_width="26.0dip" android:layout_height="14.0dip" android:layout_marginLeft="11.0dip" android:layout_marginTop="4.0dip" android:layout_alignParentLeft="true" android:fontFamily="Roboto Medium" />
+            <EditText android:scrollbarStyle="outsideOverlay" android:textSize="16.0sp" android:textColor="#ff666666" android:textColorHint="#ff757575" android:id="@id/rtt_chat_input" android:background="@drawable/rtt_chat_edittext" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginLeft="11.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="11.0dip" android:layout_marginBottom="6.0dip" android:hint="@string/rtt_input_hint" android:maxLines="4" android:capitalize="sentences" android:autoText="true" android:layout_weight="1.0" android:inputType="textAutoCorrect|textCapSentences|textMultiLine|textShortMessage" android:fadeScrollbars="false" />
+        </LinearLayout>
+        <MenuBar android:id="@id/rtt_menu_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+</FrameLayout>

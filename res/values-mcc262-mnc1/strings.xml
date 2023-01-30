@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_incoming_call_wifi">Incoming WLAN Call</string>
+    <string name="notification_incoming_work_call_wifi">Incoming WLAN work call</string>
+    <string name="notification_ongoing_call_wifi">Ongoing WLAN Call</string>
+    <string name="notification_ongoing_work_call_wifi">Ongoing WLAN work call</string>
+</resources>

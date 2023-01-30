@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="#33000000" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="78.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:paddingTop="2.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="12.0dip" android:paddingEnd="8.0dip">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="85.0dip" android:layout_weight="1.0">
+            <TextView android:textSize="20.0px" android:textColor="@android:color/white" android:ellipsize="end" android:id="@id/hold_contact_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" style="@style/Dialer.Incall.TextAppearance" />
+            <TextView android:textSize="15.0px" android:textColor="@android:color/white" android:ellipsize="end" android:id="@id/hold_contact_number" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:singleLine="true" style="@style/Dialer.Incall.TextAppearance" />
+        </LinearLayout>
+        <TextView android:textColor="@android:color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/incall_on_hold" style="@style/Dialer.Incall.TextAppearance" />
+    </LinearLayout>
+</FrameLayout>

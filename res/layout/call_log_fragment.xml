@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/calllog_fragment" android:background="#fff1f2f5" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@id/swipe_refresh_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_gravity="start" android:orientation="horizontal" android:id="@id/multi_select_select_all_view_content" android:background="@color/setting_background_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/tab_height">
+                <ImageView android:gravity="center_vertical" android:id="@id/select_all_view_icon" android:paddingLeft="@dimen/select_all_icon_padding" android:paddingRight="@dimen/select_all_icon_padding" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ic_empty_check_mark_white_24dp" />
+                <TextView android:textSize="@dimen/select_all_text_size" android:textStyle="bold" android:textColor="@color/remove_text_color" android:gravity="center_vertical" android:id="@id/select_all_view_text" android:paddingLeft="@dimen/select_all_text_left_padding" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/select_all" android:textAllCaps="true" />
+            </LinearLayout>
+            <FrameLayout android:id="@id/modal_message_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <com.android.dialer.app.calllog.CallLogRecyclerview android:id="@id/recycler_view" android:scrollbars="vertical" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@drawable/card_foreground_selector" />
+            <com.android.dialer.widget.EmptyContentView android:gravity="center_vertical" android:layout_gravity="center" android:id="@id/empty_list_view" android:background="@drawable/empty_contentview_drawable" android:focusable="true" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

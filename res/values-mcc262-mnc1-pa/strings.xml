@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_incoming_call_wifi">ਆ ਰਹੀ WLAN ਕਾਲ</string>
+    <string name="notification_incoming_work_call_wifi">ਕੰਮ ਸਬੰਧੀ ਆ ਰਹੀ WLAN ਕਾਲ</string>
+    <string name="notification_ongoing_call_wifi">ਜਾਰੀ WLAN ਕਾਲ</string>
+    <string name="notification_ongoing_work_call_wifi">ਕੰਮ ਸਬੰਧੀ ਜਾਰੀ WLAN ਕਾਲ</string>
+</resources>

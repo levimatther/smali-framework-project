@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/add_call_shape" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0px" android:layout_marginBottom="10.0px"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="18.0px" android:textColor="@color/list_selector_text_unfocus" android:gravity="center" android:id="@id/dialpad_error_title" android:background="@drawable/add_call_shape_title" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="36.0px" />
+    <TctDialogMessage android:textSize="16.0px" android:textColor="@color/list_selector_text_unfocus" android:gravity="center" android:id="@id/dialpad_error_text" android:paddingLeft="15.0px" android:paddingRight="15.0px" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="70.0px" />
+</LinearLayout>

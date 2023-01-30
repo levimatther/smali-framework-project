@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_incoming_call_wifi">Dohodni klic prek omrežja WLAN</string>
+    <string name="notification_incoming_work_call_wifi">Dohodni delovni klic prek omrežja WLAN</string>
+    <string name="notification_ongoing_call_wifi">Aktivni klic prek omrežja WLAN</string>
+    <string name="notification_ongoing_work_call_wifi">Aktivni delovni klic prek omrežja WLAN</string>
+</resources>

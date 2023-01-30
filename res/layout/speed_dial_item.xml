@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@drawable/speed_dial_list_selector_background" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight" android:paddingStart="8.0dip" android:paddingEnd="8.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0dip" android:textColor="@drawable/list_text_selector" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/index" android:background="@drawable/circle_selector_background" android:duplicateParentState="true" android:layout_width="24.0dip" android:layout_height="24.0dip" />
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:duplicateParentState="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:paddingStart="10.0dip">
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@drawable/blocked_list_text_selector" android:ellipsize="marquee" android:id="@id/name" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@drawable/blocked_list_text_selector" android:ellipsize="marquee" android:id="@id/number" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/call_log_name_margin_bottom" android:singleLine="true" android:marqueeRepeatLimit="marquee_forever" />
+    </LinearLayout>
+</LinearLayout>

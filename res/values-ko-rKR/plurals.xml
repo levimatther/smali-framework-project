@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="delete_voicemails_confirmation_dialog_title">
+        <item quantity="other">&lt;b>이 음성사서함을 삭제하시겠습니까? &lt;/b></item>
+        <item quantity="one">&lt;b>이 음성사서함을 삭제하시겠습니까? &lt;/b></item>
+    </plurals>
+    <plurals name="description_voicemail_unread">
+        <item quantity="other">새 음성사서함 %d개</item>
+        <item quantity="one">새 음성사서함 %d개</item>
+    </plurals>
+    <plurals name="notification_voicemail_title">
+        <item quantity="other">음성메일 %1$d개</item>
+        <item quantity="one">음성메일</item>
+    </plurals>
+</resources>

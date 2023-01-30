@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/voicemail_settings_title"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:layout="@layout/preference_style" android:title="@string/voicemail_change_pin_preference_title" android:key="@string/voicemail_change_pin_key" />
+    <Preference android:layout="@layout/preference_style" android:title="@string/voicemail_change_greeting_preference_title" android:key="@string/voicemail_preference_greeting_key" />
+    <Preference android:layout="@layout/preference_style" android:title="@string/native_voicemail_transcription_preference_title" android:key="@string/voicemail_preference_voicetotest_key" />
+    <Preference android:layout="@layout/preference_style" android:title="@string/native_voicemail_automatically_download_title" android:key="@string/voicemail_preference_download_key" />
+</PreferenceScreen>

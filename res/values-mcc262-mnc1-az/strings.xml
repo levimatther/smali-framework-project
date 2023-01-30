@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="notification_incoming_call_wifi">Gələn WLAN Zəngi</string>
+    <string name="notification_incoming_work_call_wifi">Gələn WLAN iş zəngi</string>
+    <string name="notification_ongoing_call_wifi">Davam edən WLAN Zəngi</string>
+    <string name="notification_ongoing_work_call_wifi">Davam edən WLAN iş zəngi</string>
+</resources>

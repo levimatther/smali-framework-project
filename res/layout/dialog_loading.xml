@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@drawable/shape_loading_bg" android:layout_width="120.0dip" android:layout_height="120.0dip" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/iv_loading_img" android:background="@drawable/progress_round" android:layout_width="72.0dip" android:layout_height="72.0dip" android:layout_centerInParent="true" />
+    <TextView android:textSize="10.0dip" android:textColor="#ff999999" android:id="@id/tv_loading_msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:layout_below="@id/iv_loading_img" android:layout_centerHorizontal="true" />
+</RelativeLayout>
