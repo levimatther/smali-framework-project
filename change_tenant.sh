@@ -1,3 +1,4 @@
+rm -r dist/*
 grep -rl "dil3mm4tenant" --exclude=\*.sh | xargs sed -i "s/dil3mm4tenant/$1/g"
 apktool b .
 zipalign 4 dist/GcsDialer.apk dist/DIA_TCL-$1.apk
