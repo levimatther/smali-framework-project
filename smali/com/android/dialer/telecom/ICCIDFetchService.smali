@@ -248,7 +248,7 @@
 
     move-result-object v0
 
-    const-string v1, "&meid="
+    const-string v1, "&imei="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -256,7 +256,7 @@
 
     iget-object v1, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getMeid()Ljava/lang/String;
+    invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
 
     move-result-object v1
 
@@ -463,7 +463,7 @@
 
     move-result-object v1
 
-    const-string v2, "&meid="
+    const-string v2, "&imei="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -471,7 +471,7 @@
 
     iget-object v2, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    invoke-virtual {v2}, Landroid/telephony/TelephonyManager;->getMeid()Ljava/lang/String;
+    invoke-virtual {v2}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
 
     move-result-object v2
 

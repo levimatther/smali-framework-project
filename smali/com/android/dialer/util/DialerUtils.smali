@@ -659,13 +659,13 @@
 
     move-result-object v12
 
-    const-string v13, "&meid="
+    const-string v13, "&imei="
 
     invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v12
 
-    invoke-virtual {v6}, Landroid/telephony/TelephonyManager;->getMeid()Ljava/lang/String;
+    invoke-virtual {v6}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
 
     move-result-object v13
 
