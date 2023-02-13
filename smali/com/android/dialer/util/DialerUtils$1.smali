@@ -111,7 +111,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/dialer/util/DialerUtils$1;->val$context:Landroid/content/Context;
 
-    const-string v2, "You\'re not allowed to call this number."
+    const-string v2, "Calls to this number are restricted."
 
     invoke-static {v1, v2, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 

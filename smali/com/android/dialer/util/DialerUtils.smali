@@ -714,7 +714,7 @@
 
     .line 159
     :cond_1
-    const-string v11, "This SIM seems deactivated, please contact support."
+    const-string v11, "Your SIM card is not authorized. Contact support for more info."
 
     invoke-static {p0, v11, v7}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
