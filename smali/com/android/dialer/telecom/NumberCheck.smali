@@ -509,7 +509,7 @@
 
     check-cast v13, Ljava/lang/String;
 
-    invoke-virtual {v7, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v13}, Ljava/lang/String;->contains(Ljava/lang/Object;)Z
 
     move-result v7
 
@@ -545,7 +545,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v9, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v9, v7}, Ljava/lang/String;->contains(Ljava/lang/Object;)Z
 
     move-result v7
 
