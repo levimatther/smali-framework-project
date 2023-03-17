@@ -37,7 +37,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 30
+    .line 34
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
     return-void
@@ -47,17 +47,17 @@
     .locals 6
     .param p1, "jsonString"    # Ljava/lang/String;
 
-    .line 81
+    .line 85
     const-string v0, ""
 
-    .line 83
+    .line 87
     .local v0, "iccids":Ljava/lang/String;
     :try_start_0
     new-instance v1, Lorg/json/JSONObject;
 
     invoke-direct {v1, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 84
+    .line 88
     .local v1, "jsonObject":Lorg/json/JSONObject;
     const-string v2, "ICCIDS"
 
@@ -67,7 +67,7 @@
 
     check-cast v2, Lorg/json/JSONArray;
 
-    .line 85
+    .line 89
     .local v2, "jsonAuthorities":Lorg/json/JSONArray;
     const/4 v3, 0x0
 
@@ -79,7 +79,7 @@
 
     if-ge v3, v4, :cond_0
 
-    .line 86
+    .line 90
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -110,23 +110,23 @@
 
     move-object v0, v4
 
-    .line 85
+    .line 89
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 89
+    .line 93
     .end local v1    # "jsonObject":Lorg/json/JSONObject;
     .end local v2    # "jsonAuthorities":Lorg/json/JSONArray;
     .end local v3    # "i":I
     :cond_0
     goto :goto_1
 
-    .line 88
+    .line 92
     :catchall_0
     move-exception v1
 
-    .line 90
+    .line 94
     :goto_1
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -140,14 +140,14 @@
 
     move-result-object v0
 
-    .line 91
+    .line 95
     invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 92
+    .line 96
     iget-object v1, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mContext:Landroid/content/Context;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -178,7 +178,7 @@
 
     move-result-object v1
 
-    .line 93
+    .line 97
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
@@ -191,7 +191,7 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 95
+    .line 99
     :cond_1
     return-void
 .end method
@@ -199,24 +199,24 @@
 .method private serviceInit()V
     .locals 2
 
-    .line 56
+    .line 60
     invoke-direct {p0}, Lcom/android/dialer/telecom/ICCIDFetchService;->serviceNotification()V
 
-    .line 57
+    .line 61
     invoke-virtual {p0}, Lcom/android/dialer/telecom/ICCIDFetchService;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mContext:Landroid/content/Context;
 
-    .line 58
+    .line 62
     invoke-static {}, Landroid/os/Build;->getSerial()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mSerialNumber:Ljava/lang/String;
 
-    .line 59
+    .line 63
     invoke-virtual {p0}, Lcom/android/dialer/telecom/ICCIDFetchService;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -231,7 +231,7 @@
 
     iput-object v0, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    .line 60
+    .line 64
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -256,23 +256,7 @@
 
     iget-object v1, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mTelephonyManager:Landroid/telephony/TelephonyManager;
 
-    invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "&mdn="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mTelephonyManager:Landroid/telephony/TelephonyManager;
-
-    invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getLine1Number()Ljava/lang/String;
+    invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getImei()Ljava/lang/String;
 
     move-result-object v1
 
@@ -292,14 +276,14 @@
 
     invoke-direct {p0, v0}, Lcom/android/dialer/telecom/ICCIDFetchService;->setupConnection(Ljava/lang/String;)V
 
-    .line 61
+    .line 65
     return-void
 .end method
 
 .method private serviceNotification()V
     .locals 6
 
-    .line 103
+    .line 107
     new-instance v0, Landroid/app/NotificationChannel;
 
     const-string v1, "ICCIDFetchService_notif_chan"
@@ -310,7 +294,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
 
-    .line 106
+    .line 110
     .local v0, "channel":Landroid/app/NotificationChannel;
     invoke-virtual {p0}, Lcom/android/dialer/telecom/ICCIDFetchService;->getApplicationContext()Landroid/content/Context;
 
@@ -326,19 +310,19 @@
 
     invoke-virtual {v2, v0}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
 
-    .line 107
+    .line 111
     new-instance v2, Landroidx/core/app/NotificationCompat$Builder;
 
     invoke-direct {v2, p0, v1}, Landroidx/core/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 108
+    .line 112
     const v1, 0x7f0800ae
 
     invoke-virtual {v2, v1}, Landroidx/core/app/NotificationCompat$Builder;->setSmallIcon(I)Landroidx/core/app/NotificationCompat$Builder;
 
     move-result-object v1
 
-    .line 109
+    .line 113
     const-string v2, "Checking for updates"
 
     invoke-virtual {v1, v2}, Landroidx/core/app/NotificationCompat$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
@@ -349,13 +333,13 @@
 
     move-result-object v1
 
-    .line 110
+    .line 114
     .local v1, "notification":Landroid/app/Notification;
     const/4 v2, 0x2
 
     invoke-virtual {p0, v2, v1}, Lcom/android/dialer/telecom/ICCIDFetchService;->startForeground(ILandroid/app/Notification;)V
 
-    .line 111
+    .line 115
     new-instance v2, Landroid/os/Handler;
 
     invoke-virtual {p0}, Lcom/android/dialer/telecom/ICCIDFetchService;->getMainLooper()Landroid/os/Looper;
@@ -372,7 +356,7 @@
 
     invoke-virtual {v2, v3, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 112
+    .line 116
     return-void
 .end method
 
@@ -380,14 +364,14 @@
     .locals 4
     .param p1, "urlString"    # Ljava/lang/String;
 
-    .line 75
+    .line 79
     iget-object v0, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/volley/toolbox/Volley;->newRequestQueue(Landroid/content/Context;)Lcom/android/volley/RequestQueue;
 
     move-result-object v0
 
-    .line 76
+    .line 80
     .local v0, "queue":Lcom/android/volley/RequestQueue;
     new-instance v1, Lcom/android/volley/toolbox/StringRequest;
 
@@ -397,11 +381,11 @@
 
     invoke-direct {v1, v2, p1, p0, v3}, Lcom/android/volley/toolbox/StringRequest;-><init>(ILjava/lang/String;Lcom/android/volley/Response$Listener;Lcom/android/volley/Response$ErrorListener;)V
 
-    .line 77
+    .line 81
     .local v1, "stringRequest":Lcom/android/volley/toolbox/StringRequest;
     invoke-virtual {v0, v1}, Lcom/android/volley/RequestQueue;->add(Lcom/android/volley/Request;)Lcom/android/volley/Request;
 
-    .line 78
+    .line 82
     return-void
 .end method
 
@@ -411,7 +395,7 @@
     .locals 1
     .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 71
+    .line 75
     const/4 v0, 0x0
 
     return-object v0
@@ -420,32 +404,32 @@
 .method public onCreate()V
     .locals 0
 
-    .line 52
+    .line 56
     invoke-direct {p0}, Lcom/android/dialer/telecom/ICCIDFetchService;->serviceInit()V
 
-    .line 53
+    .line 57
     return-void
 .end method
 
 .method public onDestroy()V
     .locals 1
 
-    .line 65
+    .line 69
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/dialer/telecom/ICCIDFetchService;->stopForeground(Z)V
 
-    .line 66
+    .line 70
     invoke-super {p0}, Landroid/app/Service;->onDestroy()V
 
-    .line 67
+    .line 71
     return-void
 .end method
 
 .method public bridge synthetic onResponse(Ljava/lang/Object;)V
     .locals 0
 
-    .line 30
+    .line 34
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/android/dialer/telecom/ICCIDFetchService;->onResponse(Ljava/lang/String;)V
@@ -454,88 +438,120 @@
 .end method
 
 .method public onResponse(Ljava/lang/String;)V
-    .locals 4
+    .locals 8
     .param p1, "response"    # Ljava/lang/String;
 
-    .line 116
-    invoke-direct {p0, p1}, Lcom/android/dialer/telecom/ICCIDFetchService;->processDatabase(Ljava/lang/String;)V
+    .line 120
+    invoke-virtual {p0}, Lcom/android/dialer/telecom/ICCIDFetchService;->getApplicationContext()Landroid/content/Context;
 
-    .line 117
-    new-instance v0, Lcom/android/dialer/telecom/NumberCheck;
+    move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {v0}, Landroid/telephony/SubscriptionManager;->from(Landroid/content/Context;)Landroid/telephony/SubscriptionManager;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v0
 
-    const-string v2, "https://whitelabel.safetelecom.net/blockednumbers?serial="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mSerialNumber:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 121
+    .local v0, "sm":Landroid/telephony/SubscriptionManager;
+    invoke-virtual {v0}, Landroid/telephony/SubscriptionManager;->getActiveSubscriptionInfoList()Ljava/util/List;
 
     move-result-object v1
 
-    const-string v2, "&imei="
+    .line 122
+    .local v1, "sis":Ljava/util/List;, "Ljava/util/List<Landroid/telephony/SubscriptionInfo;>;"
+    const-string v2, ""
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mTelephonyManager:Landroid/telephony/TelephonyManager;
-
-    invoke-virtual {v2}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "&mdn="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mTelephonyManager:Landroid/telephony/TelephonyManager;
-
-    invoke-virtual {v2}, Landroid/telephony/TelephonyManager;->getLine1Number()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "&tenant=dil3mm4tenant"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mContext:Landroid/content/Context;
-
+    .line 123
+    .local v2, "iccId":Ljava/lang/String;
     const/4 v3, 0x0
 
-    invoke-direct {v0, v1, v2, v3, v3}, Lcom/android/dialer/telecom/NumberCheck;-><init>(Ljava/lang/String;Landroid/content/Context;Ljava/lang/String;Lcom/android/dialer/telecom/OnFinishedListener;)V
+    if-eqz v1, :cond_0
 
-    sget-object v1, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
+    .line 124
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    move-result-object v4
 
-    new-array v2, v2, [Ljava/lang/Void;
+    check-cast v4, Landroid/telephony/SubscriptionInfo;
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/dialer/telecom/NumberCheck;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    .line 125
+    .local v4, "si":Landroid/telephony/SubscriptionInfo;
+    invoke-virtual {v4}, Landroid/telephony/SubscriptionInfo;->getIccId()Ljava/lang/String;
 
-    .line 118
+    move-result-object v2
+
+    .line 127
+    .end local v4    # "si":Landroid/telephony/SubscriptionInfo;
+    :cond_0
+    invoke-direct {p0, p1}, Lcom/android/dialer/telecom/ICCIDFetchService;->processDatabase(Ljava/lang/String;)V
+
+    .line 128
+    new-instance v4, Lcom/android/dialer/telecom/NumberCheck;
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "https://whitelabel.safetelecom.net/blockednumbers?iccid="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, "&serial="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mSerialNumber:Ljava/lang/String;
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, "&imei="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mTelephonyManager:Landroid/telephony/TelephonyManager;
+
+    invoke-virtual {v6}, Landroid/telephony/TelephonyManager;->getImei()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, "&tenant=dil3mm4tenant"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    iget-object v6, p0, Lcom/android/dialer/telecom/ICCIDFetchService;->mContext:Landroid/content/Context;
+
+    const/4 v7, 0x0
+
+    invoke-direct {v4, v5, v6, v7, v7}, Lcom/android/dialer/telecom/NumberCheck;-><init>(Ljava/lang/String;Landroid/content/Context;Ljava/lang/String;Lcom/android/dialer/telecom/OnFinishedListener;)V
+
+    sget-object v5, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
+
+    new-array v3, v3, [Ljava/lang/Void;
+
+    invoke-virtual {v4, v5, v3}, Lcom/android/dialer/telecom/NumberCheck;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+
+    .line 129
     return-void
 .end method
 
@@ -545,10 +561,10 @@
     .param p2, "flags"    # I
     .param p3, "startId"    # I
 
-    .line 46
+    .line 50
     invoke-direct {p0}, Lcom/android/dialer/telecom/ICCIDFetchService;->serviceInit()V
 
-    .line 47
+    .line 51
     const/4 v0, 0x2
 
     return v0

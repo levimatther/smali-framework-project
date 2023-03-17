@@ -8,103 +8,19 @@
 
 .field private static final RANDOM:Ljava/util/Random;
 
-.field private static final TAG_Dilaer:Ljava/lang/String; = "DialerUtils"
-
-.field public static final TYPE_BLACK:I = 0x0
-
-.field public static final TYPE_WHITE:I = 0x1
-
 .field private static final WPS_PREFIX:Ljava/lang/String; = "*272"
-
-.field public static final menu_line_center_color_text_default:Ljava/lang/String; = "#FF000000"
-
-.field public static final menu_line_center_color_text_dish:Ljava/lang/String; = "#FFFFFFFF"
-
-.field public static final menu_line_color_default:[I
-
-.field public static final menu_line_color_dish:[I
-
-.field public static final menu_line_start_color_text_default:Ljava/lang/String; = "#C5C2C2"
-
-.field public static final menu_line_start_color_text_dish:Ljava/lang/String; = "#00FFFFFF"
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 1
 
-    .line 72
+    .line 59
     new-instance v0, Ljava/util/Random;
 
     invoke-direct {v0}, Ljava/util/Random;-><init>()V
 
     sput-object v0, Lcom/android/dialer/util/DialerUtils;->RANDOM:Ljava/util/Random;
-
-    const/4 v0, 0x3
-
-    new-array v1, v0, [I
-
-    const-string v2, "#C5C2C2"
-
-    .line 81
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v3
-
-    const/4 v4, 0x0
-
-    aput v3, v1, v4
-
-    const-string v3, "#FF000000"
-
-    .line 82
-    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v3
-
-    const/4 v5, 0x1
-
-    aput v3, v1, v5
-
-    .line 83
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v2
-
-    const/4 v3, 0x2
-
-    aput v2, v1, v3
-
-    sput-object v1, Lcom/android/dialer/util/DialerUtils;->menu_line_color_default:[I
-
-    new-array v0, v0, [I
-
-    const-string v1, "#00FFFFFF"
-
-    .line 84
-    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v2
-
-    aput v2, v0, v4
-
-    const-string v2, "#FFFFFFFF"
-
-    .line 85
-    invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v2
-
-    aput v2, v0, v5
-
-    .line 86
-    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v1
-
-    aput v1, v0, v3
-
-    sput-object v0, Lcom/android/dialer/util/DialerUtils;->menu_line_color_dish:[I
 
     return-void
 .end method
@@ -112,129 +28,55 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 58
+    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static CheckAndSetImageForMenuBarAtPosition(Landroid/content/Context;Landroid/widget/MenuBar;II)V
-    .locals 2
-
-    .line 302
-    invoke-static {p0}, Lcom/android/operatorutils/CarrierConfigManagerEx;->isDishInSimpleMode(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    const/4 v0, 0x1
-
-    if-nez p2, :cond_1
-
-    const/4 p2, 0x0
-
-    if-nez p3, :cond_0
-
-    const p3, 0x7f08017a
-
-    .line 305
-    invoke-virtual {p0, p3}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p2, p0}, Landroid/widget/MenuBar;->setSoftKeyImage(ILandroid/graphics/drawable/Drawable;)V
-
-    goto :goto_0
-
-    :cond_0
-    if-ne p3, v0, :cond_3
-
-    const p3, 0x7f08017c
-
-    .line 307
-    invoke-virtual {p0, p3}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
-
-    invoke-virtual {p1, p2, p0}, Landroid/widget/MenuBar;->setSoftKeyImage(ILandroid/graphics/drawable/Drawable;)V
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v1, 0x2
-
-    if-ne p2, v1, :cond_3
-
-    if-nez p3, :cond_2
-
-    const p2, 0x7f080191
-
-    .line 311
-    invoke-virtual {p0, p2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
-
-    invoke-virtual {p1, v1, p0}, Landroid/widget/MenuBar;->setSoftKeyImage(ILandroid/graphics/drawable/Drawable;)V
-
-    goto :goto_0
-
-    :cond_2
-    if-ne p3, v0, :cond_3
-
-    const p2, 0x7f080192
-
-    .line 313
-    invoke-virtual {p0, p2}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
-
-    invoke-virtual {p1, v1, p0}, Landroid/widget/MenuBar;->setSoftKeyImage(ILandroid/graphics/drawable/Drawable;)V
-
-    :cond_3
-    :goto_0
-    return-void
-.end method
-
-.method static synthetic access$000(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 0
-
-    .line 58
-    invoke-static {p0, p1}, Lcom/android/dialer/util/DialerUtils;->placeCallOrMakeToast(Landroid/content/Context;Landroid/content/Intent;)V
-
-    return-void
-.end method
-
 .method public static closeQuietly(Ljava/lang/AutoCloseable;)V
-    .locals 0
+    .locals 1
+    .param p0, "closeable"    # Ljava/lang/AutoCloseable;
 
+    .line 205
     if-eqz p0, :cond_0
 
-    .line 204
+    .line 207
     :try_start_0
     invoke-interface {p0}, Ljava/lang/AutoCloseable;->close()V
     :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 211
+    goto :goto_0
+
+    .line 210
+    :catch_0
+    move-exception v0
 
     goto :goto_0
 
-    :catch_0
-    move-exception p0
-
-    .line 206
-    throw p0
-
+    .line 208
     :catch_1
+    move-exception v0
+
+    .line 209
+    .local v0, "rethrown":Ljava/lang/RuntimeException;
+    throw v0
+
+    .line 213
+    .end local v0    # "rethrown":Ljava/lang/RuntimeException;
     :cond_0
     :goto_0
     return-void
 .end method
 
 .method public static createShareableFile(Landroid/content/Context;)Ljava/io/File;
-    .locals 4
+    .locals 5
+    .param p0, "context"    # Landroid/content/Context;
 
-    .line 261
+    .line 264
     sget-object v0, Lcom/android/dialer/util/DialerUtils;->RANDOM:Ljava/util/Random;
 
     invoke-virtual {v0}, Ljava/util/Random;->nextLong()J
@@ -245,81 +87,50 @@
 
     move-result-wide v0
 
-    .line 262
+    .line 265
+    .local v0, "fileId":J
     new-instance v2, Ljava/io/File;
 
     invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
 
-    move-result-object p0
+    move-result-object v3
 
-    const-string v3, "my_cache"
+    const-string v4, "my_cache"
 
-    invoke-direct {v2, p0, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    .line 263
-    invoke-virtual {v2}, Ljava/io/File;->exists()Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    .line 264
-    invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
+    invoke-direct {v2, v3, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     .line 266
+    .local v2, "parentDir":Ljava/io/File;
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    .line 267
+    invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
+
+    .line 269
     :cond_0
-    new-instance p0, Ljava/io/File;
+    new-instance v3, Ljava/io/File;
 
     invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v4
 
-    invoke-direct {p0, v2, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v3, v2, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    return-object p0
-.end method
-
-.method public static getDefaultSharedPreferenceForDeviceProtectedStorageContext(Landroid/content/Context;)Landroid/content/SharedPreferences;
-    .locals 1
-
-    .line 278
-    invoke-static {p0}, Lcom/android/dialer/common/Assert;->isNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 280
-    invoke-static {p0}, Landroidx/core/content/ContextCompat;->isDeviceProtectedStorage(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    move-object v0, p0
-
-    goto :goto_0
-
-    .line 282
-    :cond_0
-    invoke-static {p0}, Landroidx/core/content/ContextCompat;->createDeviceProtectedStorageContext(Landroid/content/Context;)Landroid/content/Context;
-
-    move-result-object v0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    move-object p0, v0
-
-    .line 286
-    :cond_1
-    invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object p0
-
-    return-object p0
+    return-object v3
 .end method
 
 .method public static hideInputMethod(Landroid/view/View;)V
-    .locals 2
+    .locals 3
+    .param p0, "view"    # Landroid/view/View;
 
-    .line 250
+    .line 252
+    nop
+
+    .line 253
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -332,89 +143,26 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
+    .line 254
+    .local v0, "imm":Landroid/view/inputmethod/InputMethodManager;
     if-eqz v0, :cond_0
 
-    .line 252
+    .line 255
     invoke-virtual {p0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
-    move-result-object p0
+    move-result-object v1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, p0, v1}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
+    invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
+    .line 257
     :cond_0
     return-void
 .end method
 
-.method public static isConferenceURICallLog(Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 1
-
-    if-eqz p0, :cond_0
-
-    const-string v0, ";"
-
-    .line 173
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    const-string v0, ","
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    .line 174
-    :cond_0
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 p0, 0x0
-
-    :goto_0
-    return p0
-.end method
-
-.method public static isMediaTekPlatform()Z
-    .locals 2
-
-    .line 292
-    sget-object v0, Landroid/os/Build;->HARDWARE:Ljava/lang/String;
-
-    const-string v1, "mt[0-9]*"
-
-    .line 293
-    invoke-virtual {v0, v1}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public static join(Ljava/lang/Iterable;)Ljava/lang/CharSequence;
-    .locals 5
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -425,77 +173,103 @@
         }
     .end annotation
 
-    .line 219
+    .line 222
+    .local p0, "list":Ljava/lang/Iterable;, "Ljava/lang/Iterable<Ljava/lang/CharSequence;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 220
+    .line 223
+    .local v0, "sb":Ljava/lang/StringBuilder;
     invoke-static {}, Landroid/text/BidiFormatter;->getInstance()Landroid/text/BidiFormatter;
 
     move-result-object v1
 
-    .line 223
+    .line 224
+    .local v1, "formatter":Landroid/text/BidiFormatter;
+    const-string v2, ", "
+
+    .line 226
+    .local v2, "separator":Ljava/lang/CharSequence;
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object p0
+    move-result-object v3
 
-    const/4 v2, 0x1
+    .line 227
+    .local v3, "itr":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/CharSequence;>;"
+    const/4 v4, 0x1
 
-    .line 225
+    .line 228
+    .local v4, "firstTime":Z
     :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v5
 
-    if-eqz v3, :cond_1
+    if-eqz v5, :cond_1
 
-    if-eqz v2, :cond_0
+    .line 229
+    if-eqz v4, :cond_0
 
-    const/4 v2, 0x0
+    .line 230
+    const/4 v4, 0x0
 
     goto :goto_1
 
-    :cond_0
-    const-string v3, ", "
-
-    .line 229
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
-
-    .line 233
-    :goto_1
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/CharSequence;
-
-    invoke-interface {v3}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    sget-object v4, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
-
-    invoke-virtual {v1, v3, v4}, Landroid/text/BidiFormatter;->unicodeWrap(Ljava/lang/String;Landroid/text/TextDirectionHeuristic;)Ljava/lang/String;
-
-    move-result-object v3
-
     .line 232
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+    .line 235
+    :goto_1
+    nop
+
+    .line 236
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/lang/CharSequence;
+
+    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    sget-object v6, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
+
+    invoke-virtual {v1, v5, v6}, Landroid/text/BidiFormatter;->unicodeWrap(Ljava/lang/String;Landroid/text/TextDirectionHeuristic;)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 235
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 237
+    .line 240
     :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v5
 
-    invoke-virtual {v1, p0}, Landroid/text/BidiFormatter;->unicodeWrap(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, v5}, Landroid/text/BidiFormatter;->unicodeWrap(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v5
 
-    return-object p0
+    return-object v5
+.end method
+
+.method static synthetic lambda$startActivityWithErrorToast$0(Landroid/content/Context;Landroid/content/Intent;Landroid/content/DialogInterface;I)V
+    .locals 0
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "intent"    # Landroid/content/Intent;
+    .param p2, "dialog"    # Landroid/content/DialogInterface;
+    .param p3, "which"    # I
+
+    .line 107
+    invoke-static {p0, p1}, Lcom/android/dialer/util/DialerUtils;->placeCallOrMakeToast(Landroid/content/Context;Landroid/content/Intent;)V
+
+    return-void
 .end method
 
 .method private static placeCallOrMakeToast(Landroid/content/Context;Landroid/content/Intent;)V
@@ -718,7 +492,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v6}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
+    invoke-virtual {v6}, Landroid/telephony/TelephonyManager;->getImei()Ljava/lang/String;
 
     move-result-object v12
 
@@ -726,9 +500,9 @@
 
     move-result-object v7
 
-    const-string v12, "&mdn="
+    const-string v12, "&mdn"
 
-    invoke-virtual {v12, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -736,7 +510,7 @@
 
     move-result-object v12
 
-    invoke-virtual {v12, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -775,7 +549,7 @@
 
     const/4 v12, 0x0
 
-    const-string v1, "This SIM seems deactivated, please contact support."
+    const-string v1, "Your SIM card is not authorized. Contact support for more info."
 
     invoke-static {v0, v1, v12}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
@@ -830,205 +604,104 @@
     return-void
 .end method
 
-.method public static setMenuBarBackgroundColor(Landroid/widget/MenuBar;I)V
-    .locals 1
-
-    if-nez p0, :cond_0
-
-    return-void
-
-    .line 330
-    :cond_0
-    invoke-static {}, Lcom/android/operatorutils/CarrierConfigManagerEx;->isDishProduct()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 331
-    invoke-virtual {p0, p1}, Landroid/widget/MenuBar;->setMenuBarBackgroundColor(I)V
-
-    :cond_1
-    return-void
-.end method
-
-.method public static setMenuBarMenuLine(Landroid/content/Context;Landroid/widget/MenuBar;[I)V
-    .locals 0
-
-    if-eqz p1, :cond_1
-
-    if-nez p2, :cond_0
-
-    goto :goto_0
-
-    .line 347
-    :cond_0
-    invoke-static {p0}, Lcom/android/operatorutils/CarrierConfigManagerEx;->isDishInSimpleMode(Landroid/content/Context;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_1
-
-    const/4 p0, 0x0
-
-    .line 348
-    invoke-virtual {p1, p0}, Landroid/widget/MenuBar;->getChildAt(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/widget/FrameLayout;
-
-    if-eqz p1, :cond_1
-
-    .line 350
-    invoke-virtual {p1, p0}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/widget/LinearLayout;
-
-    if-eqz p1, :cond_1
-
-    .line 352
-    invoke-virtual {p1, p0}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/widget/ImageView;
-
-    if-eqz p0, :cond_1
-
-    const p1, 0x7f080178
-
-    .line 354
-    invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setBackgroundResource(I)V
-
-    .line 355
-    invoke-virtual {p0}, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
-
-    check-cast p0, Landroid/graphics/drawable/GradientDrawable;
-
-    .line 356
-    invoke-virtual {p0, p2}, Landroid/graphics/drawable/GradientDrawable;->setColors([I)V
-
-    :cond_1
-    :goto_0
-    return-void
-.end method
-
-.method public static setSoftKeyTextColor(Landroid/widget/MenuBar;II)V
-    .locals 1
-
-    if-eqz p0, :cond_1
-
-    if-ltz p2, :cond_1
-
-    const/4 v0, 0x2
-
-    if-le p2, v0, :cond_0
-
-    goto :goto_0
-
-    .line 369
-    :cond_0
-    invoke-static {}, Lcom/android/operatorutils/CarrierConfigManagerEx;->isDishProduct()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 370
-    invoke-virtual {p0, p1, p2}, Landroid/widget/MenuBar;->setSoftKeyTextColor(II)V
-
-    :cond_1
-    :goto_0
-    return-void
-.end method
-
 .method private static shouldWarnForOutgoingWps(Landroid/content/Context;Ljava/lang/String;)Z
-    .locals 3
+    .locals 6
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "number"    # Ljava/lang/String;
 
+    .line 187
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_3
 
     const-string v1, "*272"
 
-    .line 183
     invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result p1
+    move-result v1
 
-    if-eqz p1, :cond_2
+    if-eqz v1, :cond_3
 
-    .line 184
-    const-class p1, Landroid/telephony/TelephonyManager;
+    .line 188
+    const-class v1, Landroid/telephony/TelephonyManager;
 
-    invoke-virtual {p0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
-    move-result-object p0
+    move-result-object v1
 
-    check-cast p0, Landroid/telephony/TelephonyManager;
+    check-cast v1, Landroid/telephony/TelephonyManager;
 
-    .line 185
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 189
+    .local v1, "telephonyManager":Landroid/telephony/TelephonyManager;
+    nop
 
-    const/16 v1, 0x18
+    .line 190
+    invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getVoiceNetworkType()I
 
-    const/4 v2, 0x1
+    move-result v2
 
-    if-lt p1, v1, :cond_0
+    const/16 v3, 0xd
 
-    .line 187
-    invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getVoiceNetworkType()I
+    const/4 v4, 0x1
 
-    move-result p1
+    if-ne v2, v3, :cond_0
 
-    const/16 v1, 0xd
-
-    if-ne p1, v1, :cond_0
-
-    move p1, v2
+    move v2, v4
 
     goto :goto_0
 
     :cond_0
-    move p1, v0
+    move v2, v0
 
-    .line 189
+    .line 191
+    .local v2, "isOnVolte":Z
     :goto_0
-    invoke-virtual {p0}, Landroid/telephony/TelephonyManager;->getCallState()I
+    nop
 
-    move-result p0
+    .line 192
+    invoke-virtual {v1}, Landroid/telephony/TelephonyManager;->getCallState()I
 
-    const/4 v1, 0x2
+    move-result v3
 
-    if-ne p0, v1, :cond_1
+    const/4 v5, 0x2
 
-    move p0, v2
+    if-ne v3, v5, :cond_1
+
+    move v3, v4
 
     goto :goto_1
 
     :cond_1
-    move p0, v0
+    move v3, v0
 
+    .line 193
+    .local v3, "hasCurrentActiveCall":Z
     :goto_1
-    if-eqz p1, :cond_2
+    if-eqz v2, :cond_2
 
-    if-eqz p0, :cond_2
+    if-eqz v3, :cond_2
 
-    move v0, v2
+    move v0, v4
 
     :cond_2
+    return v0
+
+    .line 195
+    .end local v1    # "telephonyManager":Landroid/telephony/TelephonyManager;
+    .end local v2    # "isOnVolte":Z
+    .end local v3    # "hasCurrentActiveCall":Z
+    :cond_3
     return v0
 .end method
 
 .method public static showInputMethod(Landroid/view/View;)V
     .locals 2
+    .param p0, "view"    # Landroid/view/View;
 
-    .line 242
+    .line 244
+    nop
+
+    .line 245
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1041,46 +714,48 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
+    .line 246
+    .local v0, "imm":Landroid/view/inputmethod/InputMethodManager;
     if-eqz v0, :cond_0
 
+    .line 247
     const/4 v1, 0x0
 
-    .line 244
     invoke-virtual {v0, p0, v1}, Landroid/view/inputmethod/InputMethodManager;->showSoftInput(Landroid/view/View;I)Z
 
+    .line 249
     :cond_0
     return-void
 .end method
 
 .method public static startActivityWithErrorToast(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "intent"    # Landroid/content/Intent;
 
-    const v0, 0x7f11004d
+    .line 69
+    const v0, 0x7f120035
 
-    .line 98
     invoke-static {p0, p1, v0}, Lcom/android/dialer/util/DialerUtils;->startActivityWithErrorToast(Landroid/content/Context;Landroid/content/Intent;I)V
 
+    .line 70
     return-void
 .end method
 
 .method public static startActivityWithErrorToast(Landroid/content/Context;Landroid/content/Intent;I)V
     .locals 5
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "intent"    # Landroid/content/Intent;
+    .param p2, "msgId"    # I
 
+    .line 84
     const-string v0, "android.telecom.extra.OUTGOING_CALL_EXTRAS"
-
-    const-string v1, "DialerUtils"
-
-    const-string v2, "startActivityWithErrorToast: "
-
-    .line 114
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     const/4 v1, 0x0
 
     :try_start_0
     const-string v2, "android.intent.action.CALL"
 
-    .line 116
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v3
@@ -1091,7 +766,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 118
+    .line 86
     invoke-static {}, Lcom/android/dialer/util/TouchPointManager;->getInstance()Lcom/android/dialer/util/TouchPointManager;
 
     move-result-object v2
@@ -1100,7 +775,8 @@
 
     move-result-object v2
 
-    .line 119
+    .line 87
+    .local v2, "touchPoint":Landroid/graphics/Point;
     iget v3, v2, Landroid/graphics/Point;->x:I
 
     if-nez v3, :cond_0
@@ -1109,7 +785,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 122
+    .line 90
     :cond_0
     invoke-virtual {p1, v0}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
@@ -1117,31 +793,35 @@
 
     if-eqz v3, :cond_1
 
-    .line 123
+    .line 91
     invoke-virtual {p1, v0}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
     move-result-object v3
 
     check-cast v3, Landroid/os/Bundle;
 
+    .local v3, "extras":Landroid/os/Bundle;
     goto :goto_0
 
-    .line 125
+    .line 93
+    .end local v3    # "extras":Landroid/os/Bundle;
     :cond_1
     new-instance v3, Landroid/os/Bundle;
 
     invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
 
+    .line 95
+    .restart local v3    # "extras":Landroid/os/Bundle;
     :goto_0
     const-string v4, "touchPoint"
 
-    .line 127
     invoke-virtual {v3, v4, v2}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
-    .line 128
+    .line 96
     invoke-virtual {p1, v0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 131
+    .line 99
+    .end local v3    # "extras":Landroid/os/Bundle;
     :cond_2
     invoke-virtual {p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
@@ -1157,77 +837,86 @@
 
     if-eqz v0, :cond_3
 
+    .line 100
     const-string v0, "DialUtils.startActivityWithErrorToast"
 
-    const-string v2, "showing outgoing WPS dialog before placing call"
+    const-string v3, "showing outgoing WPS dialog before placing call"
 
-    new-array v3, v1, [Ljava/lang/Object;
+    new-array v4, v1, [Ljava/lang/Object;
 
-    .line 132
-    invoke-static {v0, v2, v3}, Lcom/android/dialer/common/LogUtil;->i(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {v0, v3, v4}, Lcom/android/dialer/common/LogUtil;->i(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
-    .line 135
+    .line 103
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v2, 0x7f11038f
+    .line 104
+    .local v0, "builder":Landroid/app/AlertDialog$Builder;
+    const v3, 0x7f120271
 
-    .line 136
-    invoke-virtual {v0, v2}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v0, v3}, Landroid/app/AlertDialog$Builder;->setMessage(I)Landroid/app/AlertDialog$Builder;
 
-    const v2, 0x7f1101e4
+    .line 105
+    const v3, 0x7f120128
 
-    .line 137
-    new-instance v3, Lcom/android/dialer/util/DialerUtils$1;
+    new-instance v4, Lcom/android/dialer/util/DialerUtils$$ExternalSyntheticLambda0;
 
-    invoke-direct {v3, p0, p1}, Lcom/android/dialer/util/DialerUtils$1;-><init>(Landroid/content/Context;Landroid/content/Intent;)V
+    invoke-direct {v4, p0, p1}, Lcom/android/dialer/util/DialerUtils$$ExternalSyntheticLambda0;-><init>(Landroid/content/Context;Landroid/content/Intent;)V
 
-    invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v0, v3, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    const/high16 p1, 0x1040000
+    .line 108
+    const/high16 v3, 0x1040000
 
-    const/4 v2, 0x0
+    const/4 v4, 0x0
 
-    .line 145
-    invoke-virtual {v0, p1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v0, v3, v4}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 146
+    .line 109
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
-    move-result-object p1
+    move-result-object v3
 
-    invoke-virtual {p1}, Landroid/app/AlertDialog;->show()V
+    invoke-virtual {v3}, Landroid/app/AlertDialog;->show()V
 
+    .line 110
+    .end local v0    # "builder":Landroid/app/AlertDialog$Builder;
     goto :goto_1
 
-    .line 148
+    .line 111
     :cond_3
     invoke-static {p0, p1}, Lcom/android/dialer/util/DialerUtils;->placeCallOrMakeToast(Landroid/content/Context;Landroid/content/Intent;)V
 
-    goto :goto_1
+    .line 113
+    .end local v2    # "touchPoint":Landroid/graphics/Point;
+    :goto_1
+    goto :goto_2
 
+    .line 114
     :cond_4
-    const/high16 v0, 0x10000000
-
-    .line 151
-    invoke-virtual {p1, v0}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-
-    .line 152
     invoke-virtual {p0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
+    .line 118
+    :goto_2
+    goto :goto_3
 
-    .line 155
+    .line 116
     :catch_0
+    move-exception v0
+
+    .line 117
+    .local v0, "e":Landroid/content/ActivityNotFoundException;
     invoke-static {p0, p2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
-    move-result-object p0
+    move-result-object v1
 
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+    invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    :goto_1
+    .line 119
+    .end local v0    # "e":Landroid/content/ActivityNotFoundException;
+    :goto_3
     return-void
 .end method

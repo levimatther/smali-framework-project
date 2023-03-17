@@ -27,7 +27,7 @@
 .method constructor <init>(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 0
 
-    .line 138
+    .line 146
     iput-object p1, p0, Lcom/android/dialer/util/DialerUtils$1;->val$context:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/android/dialer/util/DialerUtils$1;->val$intent:Landroid/content/Intent;
@@ -43,12 +43,12 @@
     .locals 5
     .param p1, "isNrSafe"    # Z
 
-    .line 140
+    .line 148
     const/4 v0, 0x0
 
     if-eqz p1, :cond_1
 
-    .line 141
+    .line 149
     iget-object v1, p0, Lcom/android/dialer/util/DialerUtils$1;->val$context:Landroid/content/Context;
 
     const-string v2, "telecom"
@@ -59,7 +59,7 @@
 
     check-cast v1, Landroid/telecom/TelecomManager;
 
-    .line 142
+    .line 150
     .local v1, "telMan":Landroid/telecom/TelecomManager;
     iget-object v2, p0, Lcom/android/dialer/util/DialerUtils$1;->val$context:Landroid/content/Context;
 
@@ -67,11 +67,11 @@
 
     move-result v2
 
-    .line 143
+    .line 151
     .local v2, "hasCallPermission":Z
     if-nez v2, :cond_0
 
-    .line 146
+    .line 154
     iget-object v3, p0, Lcom/android/dialer/util/DialerUtils$1;->val$context:Landroid/content/Context;
 
     const-string v4, "Cannot place call without Phone permission"
@@ -80,12 +80,12 @@
 
     move-result-object v0
 
-    .line 147
+    .line 155
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
     goto :goto_0
 
-    .line 149
+    .line 157
     :cond_0
     iget-object v0, p0, Lcom/android/dialer/util/DialerUtils$1;->val$intent:Landroid/content/Intent;
 
@@ -101,13 +101,13 @@
 
     invoke-virtual {v1, v0, v3}, Landroid/telecom/TelecomManager;->placeCall(Landroid/net/Uri;Landroid/os/Bundle;)V
 
-    .line 151
+    .line 159
     .end local v1    # "telMan":Landroid/telecom/TelecomManager;
     .end local v2    # "hasCallPermission":Z
     :goto_0
     goto :goto_1
 
-    .line 152
+    .line 160
     :cond_1
     iget-object v1, p0, Lcom/android/dialer/util/DialerUtils$1;->val$context:Landroid/content/Context;
 
@@ -117,10 +117,10 @@
 
     move-result-object v0
 
-    .line 153
+    .line 161
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 155
+    .line 163
     :goto_1
     return-void
 .end method
